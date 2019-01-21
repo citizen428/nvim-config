@@ -12,6 +12,7 @@ mkdir -p ~/.config/nvim
 echo '[*] Using Homebrew to install Neovim and its dependencies ...'
 brew install neovim
 brew install --HEAD universal-ctags/universal-ctags/universal-ctags
+pip install neovim
 
 # Install vim-plug plugin manager
 echo '[*] Downloading vim-plug ...'

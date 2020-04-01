@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Adapted from https://github.com/Optixal/neovim-init.vim/blob/master/install.sh 
+# Adapted from https://github.com/Optixal/neovim-init.vim
 
 set -e
 
@@ -16,16 +16,17 @@ pip install neovim
 
 # Install vim-plug plugin manager
 echo '[*] Downloading vim-plug ...'
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+git clone https://github.com/k-takata/minpac.git ~/.vim/pack/minpac/opt/minpac
 
 # Install a nerd font for icons and a beautiful airline bar
 echo "[*] Installing patched font ..."
 brew cask install font-firacode-nerd-font
 
-# Enter Neovim and install plugins using a temporary init.vim, which avoids warnings about missing colorschemes, functions, etc
+# Enter Neovim and install plugins using a temporary init.vim, which avoids 
+# warnings about missing colorschemes, functions, etc
 echo -e '[*] Running :PlugInstall within nvim ...'
-sed '/call plug#end/q' init.vim > ~/.config/nvim/init.vim
-nvim -c ':PlugInstall' -c ':UpdateRemotePlugins' -c ':qall'
+sed '/command! PackStatus/q' init.vim > ~/.config/nvim/init.vim
+nvim -c ':PackUpdate' -c ':UpdateRemotePlugins' -c ':qall'
 rm ~/.config/nvim/init.vim
 
 # Link init.vim in current working directory to nvim's config location ...

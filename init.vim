@@ -1,5 +1,6 @@
-""" minpac
+let mapleader=","
 
+""" minpac
 packadd minpac
 
 call minpac#init()
@@ -146,7 +147,6 @@ endfunction
 
 """ Custom Mappings
 
-let mapleader=","
 nmap <leader>q :NERDTreeToggle<CR>
 nmap \ <leader>q
 nmap <leader>w :TagbarToggle<CR>

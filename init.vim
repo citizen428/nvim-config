@@ -7,7 +7,7 @@ call minpac#init()
 call minpac#add('k-takata/minpac', {'type': 'opt'})
 
 " Aesthetics
-call minpac#add('drewtempelmeyer/palenight.vim')
+call minpac#add('KeitaNakamura/neodark.vim')
 call minpac#add('junegunn/rainbow_parentheses.vim')
 call minpac#add('ryanoasis/vim-devicons')
 call minpac#add('vim-airline/vim-airline')
@@ -52,13 +52,13 @@ command! PackStatus call minpac#status()
 set encoding=utf-8
 
 " Aesthetics
-colorscheme palenight
-
 if (has("termguicolors"))
   set termguicolors
 endif
 
-let g:palenight_terminal_italics=1
+set background=dark
+colorscheme neodark
+let g:neodark#solid_vertsplit = 1
 
 highlight Pmenu guibg=white guifg=black gui=bold
 highlight Comment gui=bold

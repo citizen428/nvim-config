@@ -2,8 +2,8 @@ let mapleader=","
 
 """ minpac
 packadd minpac
-
 call minpac#init()
+
 call minpac#add('k-takata/minpac', {'type': 'opt'})
 
 " Aesthetics
@@ -36,11 +36,8 @@ call minpac#add('Yggdroot/indentLine')
 
 " Programming languages
 call minpac#add('sheerun/vim-polyglot')
-
 call minpac#add('fatih/vim-go', { 'do': ':GoUpdateBinaries' })
 call minpac#add('zchee/deoplete-go', { 'do': 'make'})
-
-packloadall
 
 command! PackUpdate call minpac#update('', {'do': 'call minpac#status()'})
 command! PackClean  call minpac#clean()
@@ -66,6 +63,7 @@ highlight Normal gui=none
 highlight NonText guibg=none
 
 " Other Configurations
+filetype plugin on
 set fillchars+=vert:\ 
 set foldenable foldmethod=indent foldlevel=1 foldcolumn=1
 set ignorecase smartcase
@@ -117,12 +115,14 @@ let g:tagbar_width = 30
 let g:tagbar_iconchars = ['↠', '↡']
 
 " fzf-vim
+nnoremap <C-p> :<C-u>FZF<CR>
+
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit' }
-let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
+let g:fzf_colors = {
+  \ 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
   \ 'hl':      ['fg', 'Comment'],
   \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
@@ -152,7 +152,7 @@ nmap \ <leader>q
 nmap <leader>w :TagbarToggle<CR>
 nmap <leader>f :Files<CR>
 nmap <leader>r :so ~/.config/nvim/init.vim<CR>
-nmap <leader>t :call TrimWhitespace()<CR>   
+nmap <leader>t :call TrimWhitespace()<CR>
 xmap <leader>a gaip*
 nmap <leader>a gaip*
 nmap <leader>h :RainbowParentheses!!<CR>

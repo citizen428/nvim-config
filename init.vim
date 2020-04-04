@@ -7,7 +7,7 @@ call minpac#init()
 call minpac#add('k-takata/minpac', {'type': 'opt'})
 
 " Aesthetics
-call minpac#add('KeitaNakamura/neodark.vim')
+call minpac#add('morhetz/gruvbox')
 call minpac#add('junegunn/rainbow_parentheses.vim')
 call minpac#add('ryanoasis/vim-devicons')
 call minpac#add('vim-airline/vim-airline')
@@ -53,9 +53,16 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
-set background=dark
-colorscheme neodark
-let g:neodark#solid_vertsplit = 1
+if has("gui_vimr")
+  let g:python3_host_prog = expand("$HOME/.asdf/shims/python")
+  set background=light
+  let g:gruvbox_contrast_light = 'hard'
+else
+  set background=dark
+  let g:gruvbox_contrast_dark = 'soft'
+endif
+
+colorscheme gruvbox
 
 highlight Pmenu guibg=white guifg=black gui=bold
 highlight Comment gui=bold
@@ -145,6 +152,16 @@ function! TrimWhitespace()
   call winrestview(l:save)
 endfunction
 
+function ToggleBackground()
+  if (&background == 'light')
+    set background=dark
+    echo "background -> dark"
+  else
+    set background=light
+    echo "background -> light"
+  endif
+endfunction
+
 """ Custom Mappings
 
 nmap <leader>q :NERDTreeToggle<CR>
@@ -158,6 +175,7 @@ nmap <leader>a gaip*
 nmap <leader>h :RainbowParentheses!!<CR>
 nmap <leader><Tab> :bnext<CR>
 nmap <leader><S-Tab> :bprevious<CR>
+nmap <leader>b :call ToggleBackground()<CR>
 
 cabbrev Wq wq
 

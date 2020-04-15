@@ -170,6 +170,10 @@ nmap <silent> <leader>ts :TestSuite<CR>
 nmap <silent> <leader>tl :TestLast<CR>
 nmap <silent> <leader>tg :TestVisit<CR>
 
+""" Terminal settings
+tnoremap <Esc> <C-\><C-n>
+tnoremap <C-v><Esc> <Esc>
+
 """ Custom Functions
 
 "" Trim Whitespaces

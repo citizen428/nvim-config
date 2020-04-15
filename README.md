@@ -1,6 +1,7 @@
 # Neovim config
 
-Based on [Optixal's Neovim init.vim](https://github.com/Optixal/neovim-init.vim/).
+This was originally based on [Optixal's Neovim init.vim](https://github.com/Optixal/neovim-init.vim/), but has diverged quite
+a bit since then.
 
 Editing with NerdTree and TagBar sidebars.
 

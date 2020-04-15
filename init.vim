@@ -33,6 +33,9 @@ call minpac#add('tpope/vim-sensible')
 call minpac#add('tpope/vim-surround')
 call minpac#add('Xuyuanp/nerdtree-git-plugin')
 call minpac#add('Yggdroot/indentLine')
+call minpac#add('w0rp/ale')
+call minpac#add('mhinz/vim-grepper')
+call minpac#add('janko-m/vim-test')
 " call minpac#add('metakirby5/codi.vim')
 
 " Programming languages
@@ -144,6 +147,28 @@ let g:fzf_colors = {
       \ 'marker':  ['fg', 'Keyword'],
       \ 'spinner': ['fg', 'Label'],
       \ 'header':  ['fg', 'Comment'] }
+
+" ALE
+nmap <silent> [W <Plug>(ale_first)
+nmap <silent> [w <plug>(ale_previous)
+nmap <silent> ]w <plug>(ale_next)
+nmap <silent> ]W <Plug>(ale_last)
+
+" vim-grepper
+let g:grepper = {}
+let g:grepper.tools = ['rg', 'grep', 'git']
+
+nmap <leader>g :Grepper<CR>
+nmap <Leader>G :Grepper -cword -noprompt<CR>
+
+" vim-test
+let test#strategy = "dispatch"
+
+nmap <silent> <leader>tn :TestNearest<CR>
+nmap <silent> <leader>tf :TestFile<CR>
+nmap <silent> <leader>ts :TestSuite<CR>
+nmap <silent> <leader>tl :TestLast<CR>
+nmap <silent> <leader>tg :TestVisit<CR>
 
 """ Custom Functions
 

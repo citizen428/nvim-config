@@ -1,51 +1,53 @@
 let mapleader=","
 
 """ minpac
-packadd minpac
-call minpac#init()
+function! PackInit() abort
+  packadd minpac
 
-call minpac#add('k-takata/minpac', {'type': 'opt'})
+  call minpac#init()
+  call minpac#add('k-takata/minpac', {'type': 'opt'})
 
-" Aesthetics
-call minpac#add('morhetz/gruvbox')
-call minpac#add('junegunn/rainbow_parentheses.vim')
-call minpac#add('ryanoasis/vim-devicons')
-call minpac#add('vim-airline/vim-airline')
-call minpac#add('vim-airline/vim-airline-themes')
+  " Aesthetics
+  call minpac#add('morhetz/gruvbox')
+  call minpac#add('junegunn/rainbow_parentheses.vim')
+  call minpac#add('ryanoasis/vim-devicons')
+  call minpac#add('vim-airline/vim-airline')
+  call minpac#add('vim-airline/vim-airline-themes')
 
-" Functionalities
-call minpac#add('alvan/vim-closetag')
-call minpac#add('chrisbra/Colorizer')
-call minpac#add('ervandew/supertab')
-call minpac#add('honza/vim-snippets')
-call minpac#add('jiangmiao/auto-pairs')
-call minpac#add('junegunn/fzf', { 'do': { -> fzf#install() } })
-call minpac#add('junegunn/fzf.vim')
-call minpac#add('junegunn/vim-easy-align')
-call minpac#add('majutsushi/tagbar')
-call minpac#add('scrooloose/nerdcommenter')
-call minpac#add('scrooloose/nerdtree')
-call minpac#add('Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' })
-call minpac#add('SirVer/ultisnips')
-call minpac#add('tpope/vim-dispatch')
-call minpac#add('tpope/vim-fugitive')
-call minpac#add('tpope/vim-sensible')
-call minpac#add('tpope/vim-surround')
-call minpac#add('Xuyuanp/nerdtree-git-plugin')
-call minpac#add('Yggdroot/indentLine')
-call minpac#add('w0rp/ale')
-call minpac#add('mhinz/vim-grepper')
-call minpac#add('janko-m/vim-test')
-" call minpac#add('metakirby5/codi.vim')
+  " Functionalities
+  call minpac#add('alvan/vim-closetag')
+  call minpac#add('chrisbra/Colorizer')
+  call minpac#add('ervandew/supertab')
+  call minpac#add('honza/vim-snippets')
+  call minpac#add('jiangmiao/auto-pairs')
+  call minpac#add('junegunn/fzf', { 'do': { -> fzf#install() } })
+  call minpac#add('junegunn/fzf.vim')
+  call minpac#add('junegunn/vim-easy-align')
+  call minpac#add('majutsushi/tagbar')
+  call minpac#add('scrooloose/nerdcommenter')
+  call minpac#add('scrooloose/nerdtree')
+  call minpac#add('Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' })
+  call minpac#add('SirVer/ultisnips')
+  call minpac#add('tpope/vim-dispatch')
+  call minpac#add('tpope/vim-fugitive')
+  call minpac#add('tpope/vim-sensible')
+  call minpac#add('tpope/vim-surround')
+  call minpac#add('Xuyuanp/nerdtree-git-plugin')
+  call minpac#add('Yggdroot/indentLine')
+  call minpac#add('w0rp/ale')
+  call minpac#add('mhinz/vim-grepper')
+  call minpac#add('janko-m/vim-test')
+  " call minpac#add('metakirby5/codi.vim')
 
-" Programming languages
-call minpac#add('sheerun/vim-polyglot')
-call minpac#add('fatih/vim-go', { 'do': ':GoUpdateBinaries' })
-call minpac#add('zchee/deoplete-go', { 'do': 'make'})
+  " Programming languages
+  call minpac#add('sheerun/vim-polyglot')
+  call minpac#add('fatih/vim-go', { 'do': ':GoUpdateBinaries' })
+  call minpac#add('zchee/deoplete-go', { 'do': 'make'})
+endfunction
 
-command! PackUpdate call minpac#update('', {'do': 'call minpac#status()'})
-command! PackClean  call minpac#clean()
-command! PackStatus call minpac#status()
+command! PackUpdate call PackInit() | call minpac#update('', {'do': 'call minpac#status()'})
+command! PackClean  call PackInit() | call minpac#clean()
+command! PackStatus call PackInit() | call minpac#status()
 
 """ Settings
 

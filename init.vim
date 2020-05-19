@@ -57,8 +57,9 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
+colorscheme gruvbox
+
 if has("gui_vimr")
-  let g:python3_host_prog = expand("$HOME/.asdf/shims/python")
   set background=light
   let g:gruvbox_contrast_light = 'hard'
 else
@@ -66,27 +67,27 @@ else
   let g:gruvbox_contrast_dark = 'soft'
 endif
 
-colorscheme gruvbox
-
 highlight Pmenu guibg=white guifg=black gui=bold
 highlight Comment gui=bold
 highlight Normal gui=none
 highlight NonText guibg=none
 
 " Other Configurations
-filetype plugin on
 set fillchars+=vert:\ 
-set foldenable foldmethod=indent foldlevel=1 foldcolumn=1
+set nofoldenable foldmethod=syntax foldlevel=1 foldcolumn=1
 set ignorecase smartcase
 set inccommand=split
 set list listchars=trail:»,tab:»-
 set number relativenumber
 set scrolloff=2
 set showmatch
-set tabstop=2 softtabstop=2 shiftwidth=2 expandtab smarttab
+set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 set title
 set wrap breakindent
 set colorcolumn=80,100
+set lazyredraw
+set undofile
+let &undodir=fnamemodify($MYVIMRC, ":h") . "/undo"
 
 """ Plugin Configurations
 
@@ -101,18 +102,22 @@ let g:airline_section_z = ' %{strftime("%-I:%M %p")}'
 let g:airline_section_warning = ''
 let g:airline#extensions#tabline#enabled = 1
 
+" Colorizer
+let g:colorizer_auto_filetype = 'scss,css,html'
+let g:colorizer_skip_comments = 1
+
 " Deoplete
 let g:deoplete#enable_at_startup = 1
 " Disable documentation window
-" set completeopt-=preview
+set completeopt-=preview
 
 " Supertab
 let g:SuperTabDefaultCompletionType = "<C-n>"
 
 " Ultisnips
-let g:UltiSnipsExpandTrigger="<C-Space>"
-let g:UltiSnipsJumpForwardTrigger="<Tab>"
-let g:UltiSnipsJumpBackwardTrigger="<C-x>"
+let g:UltiSnipsExpandTrigger = "<C-Space>"
+let g:UltiSnipsJumpForwardTrigger = "<Tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<C-x>"
 
 " EasyAlign
 xmap ga <Plug>(EasyAlign)
@@ -120,7 +125,7 @@ nmap ga <Plug>(EasyAlign)
 
 " indentLine
 let g:indentLine_char = '▏'
-let g:indentLine_setColors = 0
+let g:indentLine_setColors = 1
 
 " TagBar
 let g:tagbar_width = 30
@@ -128,6 +133,7 @@ let g:tagbar_iconchars = ['↠', '↡']
 
 " fzf-vim
 nnoremap <C-p> :<C-u>FZF<CR>
+nnoremap <C-z> :Buffers<CR>
 
 let g:fzf_action = {
       \ 'ctrl-t': 'tab split',
@@ -183,7 +189,7 @@ function! TrimWhitespace()
   call winrestview(l:save)
 endfunction
 
-function ToggleBackground()
+function! ToggleBackground()
   if (&background == 'light')
     set background=dark
     echo "background -> dark"
@@ -195,23 +201,31 @@ endfunction
 
 """ Custom Mappings
 
+" Leader mappings
 nmap <leader>q :NERDTreeToggle<CR>
 nmap \ <leader>q
 nmap <leader>w :TagbarToggle<CR>
+nmap <leader>U :UndotreeToggle<CR>
 nmap <leader>f :Files<CR>
-nmap <leader>r :so ~/.config/nvim/init.vim<CR>
+nmap <leader>v :vsplit $MYVIMRC<CR>
 nmap <leader>t :call TrimWhitespace()<CR>
 xmap <leader>a gaip*
 nmap <leader>a gaip*
-nmap <leader>h :RainbowParentheses!!<CR>
 nmap <leader><Tab> :bnext<CR>
 nmap <leader><S-Tab> :bprevious<CR>
 nmap <leader>b :call ToggleBackground()<CR>
+nmap <silent> <leader>bd :bufdo bd<CR>
+nmap <leader>bf :let @+ = expand("%")<CR>
+nmap <leader>bs :ls<CR>:b<space>
 
 nnoremap <M-h> <C-w>h
 nnoremap <M-j> <C-w>j
 nnoremap <M-k> <C-w>k
 nnoremap <M-l> <C-w>l
+
+nnoremap H ^
+
+inoremap jk <Esc>
 
 cabbrev Wq wq
 

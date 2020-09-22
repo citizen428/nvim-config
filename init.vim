@@ -36,9 +36,9 @@ function! PackInit() abort
   " Programming
   call minpac#add('Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' })
   call minpac#add('fatih/vim-go', { 'do': ':GoUpdateBinaries' })
-  call minpac#add('janko-m/vim-test')
+  call minpac#add('vim-test/vim-test')
   call minpac#add('sheerun/vim-polyglot')
-  call minpac#add('tpope/vim-rails', {'type': 'opt'})
+  call minpac#add('tpope/vim-rails')
   call minpac#add('w0rp/ale')
   call minpac#add('zchee/deoplete-go', { 'do': 'make'})
 endfunction

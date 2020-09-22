@@ -82,10 +82,11 @@ set showmatch
 set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 set title
 set wrap breakindent
-set colorcolumn=80,100
+set colorcolumn=80,120
 set lazyredraw
 set undofile
 let &undodir=fnamemodify($MYVIMRC, ":h") . "/undo"
+set splitbelow splitright
 
 """ Plugin Configurations
 

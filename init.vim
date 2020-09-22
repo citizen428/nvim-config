@@ -82,7 +82,7 @@ set showmatch
 set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 set title
 set wrap breakindent
-set colorcolumn=80,120
+set colorcolumn=80,100
 set lazyredraw
 set undofile
 let &undodir=fnamemodify($MYVIMRC, ":h") . "/undo"
@@ -94,6 +94,9 @@ set splitbelow splitright
 let NERDTreeShowHidden=1
 let g:NERDTreeDirArrowExpandable = '↠'
 let g:NERDTreeDirArrowCollapsible = '↡'
+
+" NERDCommenter
+let NERDSpaceDelims=1
 
 " Airline
 let g:airline_powerline_fonts = 1
@@ -108,7 +111,7 @@ let g:colorizer_skip_comments = 1
 " Deoplete
 let g:deoplete#enable_at_startup = 1
 " Disable documentation window
-set completeopt-=preview
+" set completeopt-=preview
 
 " Supertab
 let g:SuperTabDefaultCompletionType = "<C-n>"
@@ -162,6 +165,7 @@ nmap <silent> ]W <Plug>(ale_last)
 " vim-grepper
 let g:grepper = {}
 let g:grepper.tools = ['rg', 'grep', 'git']
+let g:grepper.rg = { 'grepprg': 'rg -SH --no-heading --vimgrep' }
 
 nmap <leader>g :Grepper<CR>
 nmap <Leader>G :Grepper -cword -noprompt<CR>
@@ -206,6 +210,7 @@ nmap \ <leader>q
 nmap <leader>w :TagbarToggle<CR>
 nmap <leader>U :UndotreeToggle<CR>
 nmap <leader>f :Files<CR>
+nmap <leader>ff gg=G<C-O>
 nmap <leader>v :vsplit $MYVIMRC<CR>
 nmap <leader>t :call TrimWhitespace()<CR>
 xmap <leader>a gaip*

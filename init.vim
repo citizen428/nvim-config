@@ -9,7 +9,7 @@ function! PackInit() abort
 
   " Aesthetics
   call minpac#add('junegunn/rainbow_parentheses.vim', {'type': 'opt'})
-  call minpac#add('morhetz/gruvbox')
+  call minpac#add('jonathanfilip/vim-lucius')
   call minpac#add('ryanoasis/vim-devicons')
   call minpac#add('vim-airline/vim-airline')
 
@@ -57,14 +57,12 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
-colorscheme gruvbox
+colorscheme lucius
 
 if has("gui_vimr")
-  set background=light
-  let g:gruvbox_contrast_light = 'hard'
+  LuciusLightHighContrast
 else
-  set background=dark
-  let g:gruvbox_contrast_dark = 'soft'
+  LuciusDarkHighContrast
 endif
 
 highlight Pmenu guibg=white guifg=black gui=bold
@@ -191,10 +189,10 @@ endfunction
 
 function! ToggleBackground()
   if (&background == 'light')
-    set background=dark
+    LuciusDarkHighContrast
     echo "background -> dark"
   else
-    set background=light
+    LuciusLightHighContrast
     echo "background -> light"
   endif
 endfunction

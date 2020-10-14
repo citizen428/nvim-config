@@ -27,7 +27,7 @@ brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 pip install neovim
 
 # Install vim-plug plugin manager
-git clone https://github.com/k-takata/minpac.git ~/.vim/pack/minpac/opt/minpac
+git clone https://github.com/k-takata/minpac.git ~/.config/nvim/pack/minpac/opt/minpac
 
 # Install a nerd font for icons and a beautiful airline bar
 brew cask install font-firacode-nerd-font

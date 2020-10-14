@@ -16,7 +16,7 @@ pip install neovim
 
 # Install vim-plug plugin manager
 echo '[*] Downloading vim-plug ...'
-git clone https://github.com/k-takata/minpac.git ~/.vim/pack/minpac/opt/minpac
+git clone https://github.com/k-takata/minpac.git ~/.config/nvim/pack/minpac/opt/minpac
 
 # Install a nerd font for icons and a beautiful airline bar
 echo "[*] Installing patched font ..."

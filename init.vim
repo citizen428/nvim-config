@@ -86,8 +86,12 @@ set wrap breakindent
 set colorcolumn=80,100
 set lazyredraw
 set undofile
-let &undodir=fnamemodify($MYVIMRC, ":h") . "/undo"
 set splitbelow splitright
+
+let &undodir=fnamemodify($MYVIMRC, ":h") . "/undo"
+let g:ruby_host_prog = '~/.asdf/shims/neovim-ruby-host'
+let g:python3_host_prog = '~/.asdf/shims/python3'
+let g:polyglot_is_disabled={}
 
 """ Plugin Configurations
 
@@ -104,6 +108,7 @@ let g:airline_powerline_fonts = 1
 let g:airline_section_z = ' %{strftime("%-I:%M %p")}'
 let g:airline_section_warning = ''
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tagbar#enabled = 0
 
 " Colorizer
 let g:colorizer_auto_filetype = 'scss,css,html'

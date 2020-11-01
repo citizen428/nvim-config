@@ -216,15 +216,15 @@ nmap <leader>q :NERDTreeToggle<CR>
 nmap \ <leader>q
 nmap <leader>w :TagbarToggle<CR>
 nmap <leader>U :UndotreeToggle<CR>
-nmap <leader>f :Files<CR>
+nmap <leader>b :Buffers<CR>
 nmap <leader>ff gg=G<C-O>
-nmap <leader>v :vsplit $MYVIMRC<CR>
+nmap <leader>v :edit $MYVIMRC<CR>
 nmap <leader>t :call TrimWhitespace()<CR>
 xmap <leader>a gaip*
 nmap <leader>a gaip*
 nmap <leader><Tab> :bnext<CR>
 nmap <leader><S-Tab> :bprevious<CR>
-nmap <leader>b :call ToggleBackground()<CR>
+nmap <leader>tb :call ToggleBackground()<CR>
 nmap <silent> <leader>bd :bufdo bd<CR>
 nmap <leader>bf :let @+ = expand("%")<CR>
 nmap <leader>bs :ls<CR>:b<space>

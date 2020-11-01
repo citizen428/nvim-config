@@ -41,6 +41,7 @@ function! PackInit() abort
   call minpac#add('tpope/vim-rails')
   call minpac#add('w0rp/ale')
   call minpac#add('zchee/deoplete-go', { 'do': 'make'})
+  call minpac#add('mattn/emmet-vim')
 endfunction
 
 command! PackUpdate call PackInit() | call minpac#update('', {'do': 'call minpac#status()'})

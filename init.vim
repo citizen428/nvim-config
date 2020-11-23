@@ -141,7 +141,7 @@ let g:tagbar_iconchars = ['↠', '↡']
 " fzf-vim
 nnoremap <C-p> :<C-u>FZF<CR>
 " Use ripgrep for FZF - this will skip files in .gitignore
-let $FZF_DEFAULT_COMMAND = 'rg --files --hidden'
+let $FZF_DEFAULT_COMMAND = "rg --files --hidden -g '!.git/'"
 
 let g:fzf_action = {
       \ 'ctrl-t': 'tab split',

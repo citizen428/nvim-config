@@ -31,16 +31,16 @@ function! PackInit() abort
   call minpac#add('tpope/vim-fugitive')
   call minpac#add('tpope/vim-sensible')
   call minpac#add('tpope/vim-surround')
-  " call minpac#add('metakirby5/codi.vim')
 
   " Programming
+  call minpac#add('neovim/nvim-lspconfig', {'type': 'opt'})
   call minpac#add('Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' })
+  call minpac#add('Shougo/deoplete-lsp')
   call minpac#add('fatih/vim-go', { 'do': ':GoUpdateBinaries' })
   call minpac#add('vim-test/vim-test')
   call minpac#add('sheerun/vim-polyglot')
   call minpac#add('tpope/vim-rails')
   call minpac#add('w0rp/ale')
-  call minpac#add('zchee/deoplete-go', { 'do': 'make'})
   call minpac#add('mattn/emmet-vim')
 endfunction
 
@@ -116,8 +116,7 @@ let g:colorizer_skip_comments = 1
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1
-" Disable documentation window
-" set completeopt-=preview
+set completeopt-=preview
 
 " Supertab
 let g:SuperTabDefaultCompletionType = "<C-n>"
@@ -240,3 +239,9 @@ inoremap jk <Esc>
 
 cabbrev Wq wq
 
+""" LSP
+
+:lua << END
+  vim.cmd('packadd nvim-lspconfig')
+  require'lspconfig'.solargraph.setup{}
+END

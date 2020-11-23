@@ -239,6 +239,10 @@ inoremap jk <Esc>
 
 cabbrev Wq wq
 
+" Operator pending mappings
+onoremap p i(
+onoremap in( :<c-u>normal! f(vi(<cr>
+
 """ LSP
 
 :lua << END

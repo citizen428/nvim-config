@@ -1,6 +1,6 @@
 " vim:foldmethod=marker:foldlevel=0
 
-let mapleader=","
+let mapleader = ","
 
 """ Minpac
 " {{{
@@ -93,21 +93,22 @@ set lazyredraw
 set undofile
 set splitbelow splitright
 
-let &undodir=fnamemodify($MYVIMRC, ":h") . "/undo"
+let &undodir = fnamemodify($MYVIMRC, ":h") . "/undo"
 let g:ruby_host_prog = '~/.asdf/shims/neovim-ruby-host'
 let g:python3_host_prog = '~/.asdf/shims/python3'
 let g:polyglot_is_disabled={}
+" }}}
 
 """ Plugin
 "{{{
 
 " NERDTree
-let NERDTreeShowHidden=1
+let NERDTreeShowHidden = 1
 let g:NERDTreeDirArrowExpandable = '↠'
 let g:NERDTreeDirArrowCollapsible = '↡'
 
 " NERDCommenter
-let NERDSpaceDelims=1
+let NERDSpaceDelims = 1
 
 " Airline
 let g:airline_powerline_fonts = 1

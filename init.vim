@@ -1,6 +1,9 @@
+" vim:foldmethod=marker:foldlevel=0
+
 let mapleader=","
 
-""" minpac
+""" Minpac
+" {{{
 function! PackInit() abort
   packadd minpac
 
@@ -47,8 +50,10 @@ endfunction
 command! PackUpdate call PackInit() | call minpac#update('', {'do': 'call minpac#status()'})
 command! PackClean  call PackInit() | call minpac#clean()
 command! PackStatus call PackInit() | call minpac#status()
+" }}}
 
 """ Settings
+" {{{
 
 " Encoding
 set encoding=utf-8
@@ -73,7 +78,7 @@ highlight NonText guibg=none
 
 " Other Configurations
 set fillchars+=vert:\ 
-set nofoldenable foldmethod=syntax foldlevel=1 foldcolumn=1
+set foldenable foldmethod=syntax foldlevelstart=99 foldcolumn=1
 set ignorecase smartcase
 set inccommand=split
 set list listchars=trail:»,tab:»-
@@ -93,7 +98,8 @@ let g:ruby_host_prog = '~/.asdf/shims/neovim-ruby-host'
 let g:python3_host_prog = '~/.asdf/shims/python3'
 let g:polyglot_is_disabled={}
 
-""" Plugin Configurations
+""" Plugin
+"{{{
 
 " NERDTree
 let NERDTreeShowHidden=1
@@ -184,12 +190,16 @@ nmap <silent> <leader>tf :TestFile<CR>
 nmap <silent> <leader>ts :TestSuite<CR>
 nmap <silent> <leader>tl :TestLast<CR>
 nmap <silent> <leader>tg :TestVisit<CR>
+"}}}
 
-""" Terminal settings
+""" Terminal
+" {{{
 tnoremap <Esc> <C-\><C-n>
 tnoremap <C-v><Esc> <Esc>
+" }}}
 
-""" Custom Functions
+""" Functions
+" {{{
 
 "" Trim Whitespaces
 function! TrimWhitespace()
@@ -207,8 +217,10 @@ function! ToggleBackground()
     echo "background -> light"
   endif
 endfunction
+" }}}
 
-""" Custom Mappings
+""" Mappings
+" {{{
 
 " Leader mappings
 nmap <leader>q :NERDTreeToggle<CR>
@@ -242,8 +254,10 @@ cabbrev Wq wq
 " Operator pending mappings
 onoremap p i(
 onoremap in( :<c-u>normal! f(vi(<cr>
+" }}}
 
 """ LSP
+" {{{
 
 :lua << END
   vim.cmd('packadd nvim-lspconfig')

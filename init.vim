@@ -88,7 +88,7 @@ set lazyredraw
 set undofile
 set splitbelow splitright
 
-let &undodir = fnamemodify($MYVIMRC, ":h") . "/undo"
+let &undodir = $HOME . "/.config/nvim/undo"
 let g:ruby_host_prog = '~/.asdf/shims/neovim-ruby-host'
 let g:python3_host_prog = '~/.asdf/shims/python3'
 let g:polyglot_is_disabled={}
@@ -224,7 +224,7 @@ nmap \ <leader>q
 nmap <leader>w :TagbarToggle<CR>
 nmap <leader>U :UndotreeToggle<CR>
 nmap <leader>b :Buffers<CR>
-nmap <leader>ff gg=G<C-O>
+nmap <leader>ff :call TrimWhitespace()<CR> <Bar> gg=G<C-O>
 nmap <leader>v :edit $MYVIMRC<CR>
 nmap <leader>t :call TrimWhitespace()<CR>
 xmap <leader>a gaip*

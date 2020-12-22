@@ -64,12 +64,7 @@ if (has("termguicolors"))
 endif
 
 colorscheme lucius
-
-if has("gui_vimr")
-  LuciusLightHighContrast
-else
-  LuciusDarkHighContrast
-endif
+LuciusDarkHighContrast
 
 highlight Pmenu guibg=white guifg=black gui=bold
 highlight Comment gui=bold

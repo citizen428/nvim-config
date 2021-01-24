@@ -258,6 +258,7 @@ onoremap in( :<c-u>normal! f(vi(<cr>
 :lua << END
   vim.cmd('packadd nvim-lspconfig')
   require'lspconfig'.solargraph.setup{}
+  require'lspconfig'.tsserver.setup{}
 END
 
 nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>

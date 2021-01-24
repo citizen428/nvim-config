@@ -87,11 +87,11 @@ set colorcolumn=80,100
 set lazyredraw
 set undofile
 set splitbelow splitright
+set mouse=a
 
 let &undodir = $HOME . "/.config/nvim/undo"
 let g:ruby_host_prog = '~/.asdf/shims/neovim-ruby-host'
 let g:python3_host_prog = '~/.asdf/shims/python3'
-let g:polyglot_is_disabled={}
 " }}}
 
 """ Plugin

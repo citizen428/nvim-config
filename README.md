@@ -13,7 +13,7 @@ Some used plugins:
 
 ## Screenshots
 
-Editing Lua with [NeovimTree](https://github.com/kyazdani42/nvim-tree.lua) open and a document symbols few provided by the language server. 
+Editing Lua with [NeovimTree](https://github.com/kyazdani42/nvim-tree.lua) open and a document symbols view provided by the language server. 
 
 ![Screenshot](screenshots/screenshot1.png)
 

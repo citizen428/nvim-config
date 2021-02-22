@@ -71,6 +71,7 @@ return require("packer").startup(function()
 
   use { "junegunn/rainbow_parentheses.vim", opt = true }
 
+  use "907th/vim-auto-save"
   use "jiangmiao/auto-pairs"
   use "mbbill/undotree"
   use "mhinz/vim-grepper"

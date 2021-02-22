@@ -84,6 +84,10 @@ let g:completion_chain_complete_list = [
 
 let g:completion_auto_change_source = 1
 
+" AutoSave
+let g:auto_save = 1
+let g:auto_save_silent = 1
+
 " NERDCommenter
 let NERDSpaceDelims = 1
 

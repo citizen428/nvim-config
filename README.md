@@ -1,43 +1,25 @@
 # Neovim config
 
-This was originally based on [Optixal's Neovim init.vim](https://github.com/Optixal/neovim-init.vim/), but has diverged quite
-a bit since then.
+A Neovim configuration with a focus on leveraging Neovim-specific features and its Lua API.
 
-Editing with NerdTree and TagBar sidebars.
+Some used plugins:
 
-![Multi-Window Example](screenshots/screenshot1.png)
+* [packer.nvim](https://github.com/wbthomason/packer.nvim): plugin management
+* [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua): file explorer
+* [galaxyline.nvim](https://github.com/glepnir/galaxyline.nvim): status line
+* [NVim LSP](https://neovim.io/doc/user/lsp.html), [completion-nvim](https://github.com/nvim-lua/completion-nvim), [vim-vsnip](https://github.com/hrsh7th/vim-vsnip): LSP support and autocompletion
+* [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter): better syntax highlighting
+* [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim): fuzzy finding
 
-## Installing and Updating
+## Screenshots
 
-### Install
+Editing Lua with [NeovimTree](https://github.com/kyazdani42/nvim-tree.lua) open and a document symbols few provided by the language server. 
 
-#### Automated Installation
+![Screenshot](screenshots/screenshot1.png)
 
-Run `./install.sh`
+## Inspiration
 
-#### Manual Installation
-
-```sh
-# Make config directory for Neovim's init.vim
-mkdir -p ~/.config/nvim
-
-# Install nvim and its dependencies
-brew install neovim
-brew install --HEAD universal-ctags/universal-ctags/universal-ctags
-pip install neovim
-
-# Install vim-plug plugin manager
-git clone https://github.com/k-takata/minpac.git ~/.config/nvim/pack/minpac/opt/minpac
-
-# Install a nerd font for icons and a beautiful airline bar
-brew cask install font-firacode-nerd-font
-
-# Enter Neovim and install plugins using a temporary init.vim, which avoids
-# warnings about missing colorschemes, functions, etc
-sed '/command! PackStatus/q' init.vim > ~/.config/nvim/init.vim
-nvim -c ':PackUpdate' -c ':UpdateRemotePlugins' -c ':qall'
-rm ~/.config/nvim/init.vim
-
-# Link init.vim in current working directory to nvim's config location ...
-ln -s $PWD/init.vim ~/.config/nvim/
-```
+* [Optixal's init.vim](https://github.com/Optixal/neovim-init.vim/)
+* [Neovim LSP, DAP and Fuzzy Finder](https://medium.com/swlh/neovim-lsp-dap-and-fuzzy-finder-60337ef08060)
+* [Neovim — init.lua](https://alpha2phi.medium.com/neovim-init-lua-e80f4f136030)
+* [richin13's init.vim](https://github.com/richin13/dotfiles/blob/develop/dotfiles/.config/nvim/init.vim)

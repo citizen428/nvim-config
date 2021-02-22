@@ -167,6 +167,8 @@ nnoremap <silent> <leader>of :NvimTreeFindFile<CR>
 
 nmap <silent> <C-p> :Telescope find_files<CR>
 nnoremap <silent> <leader>b :Telescope buffers show_all_buffers=true<CR>
+nnoremap <silent> <leader>h :Telescope help_tags<CR>
+
 
 nnoremap <silent> <leader>U :UndotreeToggle<CR>
 nnoremap <silent> <leader>ff :call TrimWhitespace()<CR> <Bar> gg=G<C-O>

@@ -1,5 +1,11 @@
 " vim:foldmethod=marker:foldlevel=0
 
+" {{{ Load Lua config files
+lua require('plugins')
+lua require('statusline')
+lua require('lsp')
+" }}}
+
 " Aesthetics {{{
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 if (has("termguicolors"))
@@ -44,6 +50,7 @@ set list listchars=trail:»,tab:»-
 set mouse=a
 set number relativenumber
 set noshowmode
+set noswapfile
 set scrolloff=2
 set showmatch
 set signcolumn=yes
@@ -127,12 +134,6 @@ tnoremap <C-v><Esc> <Esc>
 " }}}
 
 " Autocmds {{{
-augroup lua_config
-  autocmd!
-  autocmd VimEnter * lua require('plugins')
-  autocmd VimEnter * lua require('lsp')
-augroup end
-
 autocmd BufEnter * lua require('completion').on_attach()
 autocmd BufWritePost plugins.lua PackerCompile
 

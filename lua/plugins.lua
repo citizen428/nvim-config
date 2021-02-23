@@ -23,7 +23,6 @@ return require("packer").startup(function()
   use "jonathanfilip/vim-lucius"
   use {
     "glepnir/galaxyline.nvim",
-    config = function() require("lua/statusline") end,
     requires = {{"kyazdani42/nvim-web-devicons"}}
   }
 

@@ -61,6 +61,9 @@ return require("packer").startup(function()
   use "tpope/vim-rails"
   use "vim-test/vim-test"
 
+  use "yuezk/vim-js"
+  use 'maxmellon/vim-jsx-pretty'
+
   -- Useful utilities
   use {
     "tpope/vim-dispatch",

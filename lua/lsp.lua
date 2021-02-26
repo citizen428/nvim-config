@@ -67,4 +67,7 @@ lspconfig.sumneko_lua.setup {
 }
 --}}}
 
+-- JS / TypeScript
+require'lspconfig'.tsserver.setup{}
+
 

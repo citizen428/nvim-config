@@ -75,6 +75,7 @@ return require("packer").startup(function()
 
   use "907th/vim-auto-save"
   use "jiangmiao/auto-pairs"
+  use "kassio/neoterm"
   use "mbbill/undotree"
   use "mhinz/vim-grepper"
   use "tpope/vim-surround"

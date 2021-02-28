@@ -167,6 +167,10 @@ augroup end
 
 " Mappings {{{
 
+" Prevent accidental macro recording
+nnoremap q <Nop>
+nnoremap <leader>q q
+
 nnoremap <silent> \ :NvimTreeToggle<CR>
 nnoremap <silent> <leader>of :NvimTreeFindFile<CR>
 

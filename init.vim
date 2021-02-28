@@ -163,6 +163,10 @@ augroup indentation
   autocmd Filetype yaml setlocal indentkeys-=<:>
   autocmd Filetype make setlocal noexpandtab softtabstop=0
 augroup end
+
+augroup terminal
+  au TermOpen * startinsert
+augroup end
 " }}}
 
 " Mappings {{{

@@ -162,7 +162,7 @@ augroup indentation
   autocmd Filetype python setlocal shiftwidth=4 softtabstop=4 tabstop=8
   autocmd Filetype yaml setlocal indentkeys-=<:>
   autocmd Filetype make setlocal noexpandtab softtabstop=0
-augroup END
+augroup end
 " }}}
 
 " Mappings {{{
@@ -173,7 +173,6 @@ nnoremap <silent> <leader>of :NvimTreeFindFile<CR>
 nmap <silent> <C-p> :Telescope find_files<CR>
 nnoremap <silent> <leader>b :Telescope buffers show_all_buffers=true<CR>
 nnoremap <silent> <leader>h :Telescope help_tags<CR>
-
 
 nnoremap <silent> <leader>U :UndotreeToggle<CR>
 nnoremap <silent> <leader>ff :call TrimWhitespace()<CR> <Bar> gg=G<C-O>

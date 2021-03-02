@@ -39,6 +39,7 @@ let maplocalleader = " "
 
 set autoread
 set cmdheight=2
+set clipboard=unnamedplus
 set colorcolumn=80,100
 set cursorline
 set fillchars+=vert:\ 

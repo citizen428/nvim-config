@@ -55,6 +55,7 @@ return require("packer").startup(function()
   -- Developemnt
   use "chrisbra/Colorizer"
   use "mattn/emmet-vim"
+  use "rhysd/clever-f.vim"
   use "scrooloose/nerdcommenter"
   use "tjdevries/nlua.nvim"
   use "tpope/vim-fugitive"

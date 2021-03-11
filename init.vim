@@ -200,7 +200,7 @@ nmap <leader>a gaip*
 nnoremap <silent> <leader><Tab> :bnext<CR>
 nnoremap <silent> <leader><S-Tab> :bprevious<CR>
 nnoremap <silent> <leader>tb :call ToggleBackground()<CR>
-nnoremap <silent> <leader>bd :bufdo bd<CR>
+nnoremap <silent> <leader>bd :%bdelete<CR>
 nnoremap <silent> <leader>f :let @+ = expand("%") <Bar> echo @+<CR>
 nmap <leader>bs :ls<CR>:b<space>
 

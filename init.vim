@@ -63,13 +63,13 @@ set wrap breakindent
 set wildignorecase
 set wildmode=longest,list,full
 set wildmenu
-" }}}
-
-" Plugin settings {{{
 
 let &undodir = $HOME . "/.local/share/nvim/undo"
 let g:ruby_host_prog = '~/.asdf/shims/neovim-ruby-host'
 let g:python3_host_prog = '~/.asdf/shims/python3'
+" }}}
+
+" Plugin settings {{{
 
 " completion-nvim
 " Use <Tab> and <S-Tab> to navigate through popup menu
@@ -85,10 +85,10 @@ set shortmess+=c
 let g:completion_enable_snippet = 'vim-vsnip'
 
 let g:completion_chain_complete_list = [
-    \{'complete_items': ['lsp', 'snippet', 'buffers']},
-    \{'mode': '<c-p>'},
-    \{'mode': '<c-n>'}
-\]
+      \{'complete_items': ['lsp', 'snippet', 'buffers']},
+      \{'mode': '<c-p>'},
+      \{'mode': '<c-n>'}
+      \]
 
 let g:completion_auto_change_source = 1
 

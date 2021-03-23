@@ -52,10 +52,10 @@ return require("packer").startup(function()
   use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
 
   -- Developemnt
+  use "b3nj5m1n/kommentary"
   use "chrisbra/Colorizer"
   use "mattn/emmet-vim"
   use "rhysd/clever-f.vim"
-  use "scrooloose/nerdcommenter"
   use "tjdevries/nlua.nvim"
   use "tpope/vim-fugitive"
   use "tpope/vim-rails"

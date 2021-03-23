@@ -110,9 +110,6 @@ inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
 let g:auto_save = 1
 let g:auto_save_silent = 1
 
-" NERDCommenter
-let NERDSpaceDelims = 1
-
 " Colorizer
 let g:colorizer_auto_filetype = 'scss,css,html'
 let g:colorizer_skip_comments = 1
@@ -149,7 +146,15 @@ let g:clever_f_mark_direct = 1
 let g:clever_f_smart_case = 1
 
 nmap f<Esc> <Plug>(clever-f-reset)
-"}}}
+
+" kommentary
+lua << EOF
+vim.g.kommentary_create_default_mappings = false
+vim.api.nvim_set_keymap("n", "<leader>cc", "<Plug>kommentary_line_default", {})
+vim.api.nvim_set_keymap("n", "<leader>c", "<Plug>kommentary_motion_default", {})
+vim.api.nvim_set_keymap("v", "<leader>c", "<Plug>kommentary_visual_default", {})
+EOF
+" }}}
 
 " Terminal {{{
 tnoremap <Esc> <C-\><C-n>

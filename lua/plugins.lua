@@ -29,11 +29,10 @@ return require("packer").startup(function()
   -- LSP and auto-completion
   use "neovim/nvim-lspconfig"
   use {
-    "haorenW1025/completion-nvim",
+    "hrsh7th/nvim-compe",
     requires = {
       {"hrsh7th/vim-vsnip"},
       {"hrsh7th/vim-vsnip-integ"},
-      {"steelsojka/completion-buffers"}
     }
   }
 

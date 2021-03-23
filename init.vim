@@ -72,26 +72,39 @@ let g:python3_host_prog = '~/.asdf/shims/python3'
 
 " Plugin settings {{{
 
-" completion-nvim
+" nvim-compe
+let g:compe = {}
+let g:compe.enabled = v:true
+let g:compe.autocomplete = v:true
+let g:compe.debug = v:false
+let g:compe.min_length = 1
+let g:compe.preselect = 'enable'
+let g:compe.throttle_time = 80
+let g:compe.source_timeout = 200
+let g:compe.incomplete_delay = 400
+let g:compe.max_abbr_width = 100
+let g:compe.max_kind_width = 100
+let g:compe.max_menu_width = 100
+let g:compe.documentation = v:true
+
+let g:compe.source = {}
+let g:compe.source.buffer = v:true
+let g:compe.source.nvim_lsp = v:true
+let g:compe.source.nvim_lua = v:true
+let g:compe.source.path = v:true
+let g:compe.source.spell = v:true
+let g:compe.source.vsnip = v:true
+
+set completeopt=menuone,noselect
+set shortmess+=c
+
 " Use <Tab> and <S-Tab> to navigate through popup menu
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-" Set completeopt to have a better completion experience
-set completeopt=menuone,noinsert,noselect
-
-" Avoid showing message extra message when using completion
-set shortmess+=c
-
-let g:completion_enable_snippet = 'vim-vsnip'
-
-let g:completion_chain_complete_list = [
-      \{'complete_items': ['lsp', 'snippet', 'buffers']},
-      \{'mode': '<c-p>'},
-      \{'mode': '<c-n>'}
-      \]
-
-let g:completion_auto_change_source = 1
+inoremap <silent><expr> <CR>      compe#confirm('<CR>')
+inoremap <silent><expr> <C-e>     compe#close('<C-e>')
+inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
+inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
 
 " AutoSave
 let g:auto_save = 1
@@ -144,7 +157,6 @@ tnoremap <C-v><Esc> <Esc>
 " }}}
 
 " Autocmds {{{
-autocmd BufEnter * lua require('completion').on_attach()
 autocmd BufWritePost plugins.lua PackerCompile
 
 function! TrimWhitespace()
@@ -233,5 +245,5 @@ nnoremap <silent> gn    <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 
 nnoremap <silent> <leader>D <cmd>lua vim.lsp.buf.type_definition()<CR>
 nmap <silent> <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
-" }}}
 
+" }}}

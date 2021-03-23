@@ -1,0 +1,777 @@
+{
+  "do": {
+    "prefix": "do",
+    "body": "do\n\t$0\nend",
+    "description": "do block",
+    "scope": "source.ruby"
+  },
+  "if": {
+    "prefix": "if",
+    "body": "if $1\n\t$0\nend",
+    "description": "if block",
+    "scope": "source.ruby"
+  },
+  "else": {
+    "prefix": "else",
+    "body": "else\n\t$0",
+    "description": "else statement"
+  },
+  "if else": {
+    "prefix": "ifelse",
+    "body": "if $1\n\t$2\nelse\n\t$0\nend",
+    "description": "if else block",
+    "scope": "source.ruby"
+  },
+  "if elsif": {
+    "prefix": "if elsif",
+    "body": "if $1\n\t$2\nelsif $3\n\t$0\nend",
+    "description": "if elsif block",
+    "scope": "source.ruby"
+  },
+  "if elsif else": {
+    "prefix": "if elsif else",
+    "body": [
+      "if $1",
+      "\t$2",
+      "elsif $3",
+      "\t$4",
+      "else",
+      "\t$0",
+      "end"
+    ],
+    "description": "if elsif else block",
+    "scope": "source.ruby"
+  },
+  "first": {
+    "prefix": "first",
+    "body": "first(${quantity})",
+    "description": "first(quantity)",
+    "scope": "source.ruby"
+  },
+  "find_by": {
+    "prefix": "find_by",
+    "body": "find_by(${1:key}: ${2:value})",
+    "description": "find_by(key: value)",
+    "scope": "source.ruby"
+  },
+  "find_by_params": {
+    "prefix": "find_by_params",
+    "body": "find_by(${1:id_name}: params[:${2:param}])",
+    "description": "find_by(id_name: params[:param])",
+    "scope": "source.ruby"
+  },
+  "where": {
+    "prefix": "where",
+    "body": "where(${condition})",
+    "description": "where(condition)",
+    "scope": "source.ruby"
+  },
+  "increment": {
+    "prefix": "increment",
+    "body": "increment(:${1:id})",
+    "description": "increment(:id)",
+    "scope": "source.ruby"
+  },
+  "order": {
+    "prefix": "order",
+    "body": "order(${1:column}: :${2:desc})",
+    "description": "order(column: :desc)",
+    "scope": "source.ruby"
+  },
+  "limit": {
+    "prefix": "limit",
+    "body": "limit(${quantity})",
+    "description": "limit(quantity)",
+    "scope": "source.ruby"
+  },
+  "def": {
+    "prefix": "def",
+    "body": "def ${1:name}\n\t$0\nend",
+    "description": "def",
+    "scope": "source.ruby"
+  },
+  "map": {
+    "prefix": "map",
+    "body": "${1:array}.map{ |${2:i}| $0}"
+  },
+  "select": {
+    "prefix": "select",
+    "body": "${1:array}.select { |${2:i}| $0}"
+  },
+  "inject": {
+    "prefix": "inject",
+    "body": "${1:array}.inject(${2:0}) { |${3:acc}, ${4:i}| $0}"
+  },
+  "all?": {
+    "prefix": "all?",
+    "body": "${1:array}.all? {|${2:i}| $0}",
+    "description": "Returns true if the block never returns false"
+  },
+  "any?": {
+    "prefix": "any?",
+    "body": "${1:array}.any? {|${2:i}| $0}"
+  },
+  "Exception block": {
+    "prefix": "begin",
+    "body": [
+      "begin",
+      "\t$1",
+      "rescue => exception",
+      "\t",
+      "end"
+    ]
+  },
+  "Exception block with ensure": {
+    "prefix": "begin ensure",
+    "body": [
+      "begin",
+      "\t$1",
+      "rescue => exception",
+      "\t",
+      "ensure",
+      "\t",
+      "end"
+    ]
+  },
+  "Exception block with else": {
+    "prefix": "begin else",
+    "body": [
+      "begin",
+      "\t$1",
+      "rescue => exception",
+      "\t",
+      "else",
+      "\t",
+      "end"
+    ]
+  },
+  "Exception block with else and ensure": {
+    "prefix": "begin else ensure",
+    "body": [
+      "begin",
+      "\t$1",
+      "rescue => exception",
+      "\t$2",
+      "else",
+      "\t$3",
+      "ensure",
+      "\t$0",
+      "end"
+    ]
+  },
+  "ClassInit": {
+    "prefix": "class_initialize",
+    "body": [
+      "class ${1:ClassName}",
+      "\tdef initialize",
+      "\t\t$0",
+      "\tend",
+      "end"
+    ],
+    "description": "A class with empty initialize"
+  },
+  "Class1": {
+    "prefix": "cla1",
+    "body": [
+      "class ${1:ClassName}",
+      "\tdef initialize(${2:first})",
+      "\t\t@${2:first} = ${2:first}",
+      "\tend",
+      "\t$0",
+      "end"
+    ],
+    "description": "Class initializing one property"
+  },
+  "Class2": {
+    "prefix": "cla2",
+    "body": [
+      "class ${1:ClassName}",
+      "\tdef initialize(${2:first}, ${3:second})",
+      "\t\t@${2:first} = ${2:first}",
+      "\t\t@${3:second} = ${3:second}",
+      "\tend",
+      "\t$0",
+      "end"
+    ],
+    "description": "Class initializing two properties"
+  },
+  "Class3": {
+    "prefix": "cla3",
+    "body": [
+      "class ${1:ClassName}",
+      "\tdef initialize(${2:first}, ${3:second}, ${4:third})",
+      "\t\t@${2:first} = ${2:first}",
+      "\t\t@${3:second} = ${3:second}",
+      "\t\t@${4:third} = ${4:third}",
+      "\tend",
+      "\t$0",
+      "end"
+    ],
+    "description": "Class initializing three properties"
+  },
+  "ClassExtends": {
+    "prefix": "clex",
+    "body": "class ${1:ClassName} < ${2:ParentClass}\n\t$0\nend",
+    "description": "Simple class extends"
+  },
+  "Class definition": {
+    "prefix": "class",
+    "body": [
+      "class ${1:ClassName}",
+      "\t$0",
+      "end"
+    ]
+  },
+  "for loop": {
+    "prefix": "for",
+    "body": [
+      "for ${1:value} in ${2:enumerable} do",
+      "\t$0",
+      "end"
+    ]
+  },
+  "for each loop": {
+    "prefix": "each",
+    "body": "${1:items}.each do |${2:item}|\n\t$0\nend"
+  },
+  "forever loop": {
+    "prefix": "loop",
+    "body": [
+      "loop do",
+      "\t$0",
+      "end"
+    ]
+  },
+  "until loop": {
+    "prefix": "until",
+    "body": [
+      "until ${1:test}",
+      "\t$0",
+      "end"
+    ]
+  },
+  "while loop": {
+    "prefix": "while",
+    "body": [
+      "while ${1:test}",
+      "\t$0",
+      "end"
+    ]
+  },
+  "Module definition": {
+    "prefix": "module",
+    "body": [
+      "module ${1:ModuleName}",
+      "\t$0",
+      "end"
+    ],
+    "description": "Create a module definition"
+  },
+  "unless": {
+    "prefix": "unless",
+    "body": "unless ${1:test}\n\t$0\nend",
+    "description": "unless ruby"
+  },
+  "unlessElse": {
+    "prefix": "unless else",
+    "body": [
+      "unless ${1:test}",
+      "\t$2",
+      "else",
+      "\t$3",
+      "end"
+    ]
+  },
+  "Rake Task": {
+    "prefix": "rake",
+    "description": "Create a Rake Task",
+    "body": [
+      "namespace :${1} do",
+      "\tdesc \"${2}\"",
+      "\ttask ${3}: :environment do",
+      "\t\t${4}",
+      "\tend",
+      "end"
+    ]
+  },
+  "only": {
+    "prefix": "only",
+    "body": "only: %i[${1:method}]",
+    "description": "rails only method",
+    "scope": "meta.rails.routes"
+  },
+  "except": {
+    "prefix": "except",
+    "body": "except: %i[${1:method}]",
+    "description": "rails except method",
+    "scope": "meta.rails.routes"
+  },
+  "route get": {
+    "prefix": "get",
+    "body": "get '/${1:route}', to: '${2:controller}#${3:method}'",
+    "description": "rails get route",
+    "scope": "meta.rails.routes"
+  },
+  "route post": {
+    "prefix": "post",
+    "body": "post '/${1:route}', to: '${2:controller}#${3:method}'",
+    "description": "rails post route",
+    "scope": "meta.rails.routes"
+  },
+  "route patch": {
+    "prefix": "patch",
+    "body": "patch '/${1:route}', to: '${2:controller}#${3:method}'",
+    "description": "rails patch route",
+    "scope": "meta.rails.routes"
+  },
+  "route put": {
+    "prefix": "put",
+    "body": "put '/${1:route}', to: '${2:controller}#${3:method}'",
+    "description": "rails put route",
+    "scope": "meta.rails.routes"
+  },
+  "route delete": {
+    "prefix": "delete",
+    "body": "delete '/${1:route}', to: '${2:controller}#${3:method}'",
+    "description": "rails route of delete",
+    "scope": "meta.rails.routes"
+  },
+  "resources": {
+    "prefix": "res",
+    "body": "resources :${1:res_name}",
+    "description": "resources without a custom collection block",
+    "scope": "meta.rails.routes"
+  },
+  "resources block": {
+    "prefix": "reb",
+    "body": [
+      "resources :${1:res_name} do",
+      "\t$2",
+      "end"
+    ],
+    "description": "resources with an empty params block",
+    "scope": "meta.rails.routes"
+  },
+  "resources collection": {
+    "prefix": "rescb",
+    "body": [
+      "resources :${1:res_name} do",
+      "\tcollection do",
+      "\t\t$2",
+      "\tend",
+      "end"
+    ],
+    "description": "resources with a custom collection block",
+    "scope": "meta.rails.routes"
+  },
+  "resources_member": {
+    "prefix": "resmember",
+    "body": [
+      "resources :${1:res_name} do",
+      "\tmember do",
+      "\t\t$2",
+      "\tend",
+      "end"
+    ],
+    "description": "resources with a custom member block",
+    "scope": "meta.rails.routes"
+  },
+  "resource": {
+    "prefix": "re",
+    "body": "resource :${res_name}",
+    "description": "resource without a custom collection block",
+    "scope": "meta.rails.routes"
+  },
+  "resource_block": {
+    "prefix": "reb",
+    "body": [
+      "resource :${1:res_name} do",
+      "\t$2",
+      "end"
+    ],
+    "description": "resource with an empty params block",
+    "scope": "meta.rails.routes"
+  },
+  "resource_collection": {
+    "prefix": "recb",
+    "body": [
+      "resource :${1:res_name} do",
+      "\tcollection do",
+      "\t\t$2",
+      "\tend",
+      "end"
+    ],
+    "description": "resource with a custom collection block",
+    "scope": "meta.rails.routes"
+  },
+  "resource_member": {
+    "prefix": "re member",
+    "body": [
+      "resource :${1:res_name} do",
+      "\tmember do",
+      "\t\t$2",
+      "\tend",
+      "end"
+    ],
+    "description": "resource with a custom member block",
+    "scope": "meta.rails.routes"
+  },
+  "member": {
+    "prefix": "member",
+    "body": [
+      "member do",
+      "\t$1",
+      "end"
+    ],
+    "description": "member block",
+    "scope": "meta.rails.routes"
+  },
+  "collection": {
+    "prefix": "collection",
+    "body": [
+      "collection do",
+      "\t$1",
+      "end"
+    ],
+    "description": "collection block",
+    "scope": "meta.rails.routes"
+  },
+  "render": {
+    "prefix": "render",
+    "body": "render $0",
+    "description": "render path",
+    "scope": "source.ruby.rails"
+  },
+  "redirect_to": {
+    "prefix": "redirect_to",
+    "body": "redirect_to ${1:path}",
+    "description": "redirect_to path ",
+    "scope": "source.ruby.rails"
+  },
+  "redirect_to_msg": {
+    "prefix": "redirect_to_msg",
+    "body": "redirect_to ${path}, notice: '${msg}'",
+    "description": "redirect_to path, notice: msg",
+    "scope": "source.ruby.rails"
+  },
+  "has_one": {
+    "prefix": "has_one",
+    "body": "has_one :",
+    "description": "has_one :",
+    "scope": "source.ruby.rails"
+  },
+  "dependent": {
+    "prefix": "dep",
+    "body": "dependent: :${1:id}",
+    "description": "model dependent",
+    "scope": "meta.rails.migration.create_table, meta.rails.migration.change_table"
+  },
+  "has_one_dependent": {
+    "prefix": "has_one_dep",
+    "body": "has_one :${1:id}, dependent: :${2:type}",
+    "description": "has_one :id, dependent: :type",
+    "scope": "source.ruby.rails"
+  },
+  "has_many": {
+    "prefix": "hasmany",
+    "body": "has_many :$0",
+    "description": "has_many :",
+    "scope": "source.ruby.rails"
+  },
+  "has_many_through": {
+    "prefix": "has_many_through",
+    "body": "has_many :${1:model1}, through: :${2:model2}",
+    "description": "has_many :model1, through: :model2",
+    "scope": "source.ruby.rails"
+  },
+  "has_many_dependent": {
+    "prefix": "has_many_dependent",
+    "body": "has_many :${1:id}, dependent: :${2:type}",
+    "description": "has_many :id, dependent: :type",
+    "scope": "source.ruby.rails"
+  },
+  "belongs_to": {
+    "prefix": "belongs_to",
+    "body": "belongs_to :",
+    "description": "belongs_to :",
+    "scope": "source.ruby.rails"
+  },
+  "belongs_to_cache": {
+    "prefix": "belongs_to_cache",
+    "body": "belongs_to :${1:id}, cache: ${2:true}",
+    "description": "belongs_to :id, cache: true",
+    "scope": "source.ruby.rails"
+  },
+  "has_and_belongs_to_many": {
+    "prefix": "has_and_belongs_to_many",
+    "body": "has_and_belongs_to_many :${1:id}",
+    "description": "has_and_belongs_to_many :id",
+    "scope": "source.ruby.rails"
+  },
+  "add_column": {
+    "prefix": "add_column",
+    "body": "add_column :${1:table}, :${2:column}, :${3:type}",
+    "description": "add_column :table, :column, :type",
+    "scope": "meta.rails.migration.create_table, meta.rails.migration.change_table"
+  },
+  "add_reference": {
+    "prefix": "add_reference",
+    "body": "add_reference :${1:table}, :${2:column}, foreign_key: true",
+    "description": "add_reference :table, :column, foreign_key: true",
+    "scope": "meta.rails.migration.create_table, meta.rails.migration.change_table"
+  },
+  "t.binary(tcbi)": {
+    "prefix": "binary",
+    "body": "t.binary :",
+    "description": "Table column binary",
+    "scope": "meta.rails.migration.create_table, meta.rails.migration.change_table"
+  },
+  "t.boolean(tcb)": {
+    "prefix": "boolean",
+    "body": "t.boolean :",
+    "description": "Table column boolean",
+    "scope": "meta.rails.migration.create_table, meta.rails.migration.change_table"
+  },
+  "t.date(tcda)": {
+    "prefix": "date",
+    "body": "t.date :",
+    "description": "Table column date",
+    "scope": "meta.rails.migration.create_table, meta.rails.migration.change_table"
+  },
+  "t.datetime(tcdt)": {
+    "prefix": "datetime",
+    "body": "t.datetime :",
+    "description": "Table column datetime",
+    "scope": "meta.rails.migration.create_table, meta.rails.migration.change_table"
+  },
+  "t.decimal(tcd)": {
+    "prefix": "decimal",
+    "body": "t.decimal :",
+    "description": "Table column decimal",
+    "scope": "meta.rails.migration.create_table, meta.rails.migration.change_table"
+  },
+  "t.float(tcf)": {
+    "prefix": "float",
+    "body": "t.float :",
+    "description": "Table column float",
+    "scope": "meta.rails.migration.create_table, meta.rails.migration.change_table"
+  },
+  "t.integer(tci)": {
+    "prefix": "integer",
+    "body": "t.integer :",
+    "description": "Table column integer",
+    "scope": "meta.rails.migration.create_table, meta.rails.migration.change_table"
+  },
+  "t.references(tcr)": {
+    "prefix": "references",
+    "body": "t.references :",
+    "description": "Table column(s) references",
+    "scope": "meta.rails.migration.create_table, meta.rails.migration.change_table"
+  },
+  "t.string(tcs)": {
+    "prefix": "string",
+    "body": "t.string :",
+    "description": "Table column string",
+    "scope": "meta.rails.migration.create_table, meta.rails.migration.change_table"
+  },
+  "t.text(tct)": {
+    "prefix": "text",
+    "body": "t.text :",
+    "description": "Table column text",
+    "scope": "meta.rails.migration.create_table, meta.rails.migration.change_table"
+  },
+  "t.time(tcti)": {
+    "prefix": "time",
+    "body": "t.time :",
+    "description": "Table column time",
+    "scope": "meta.rails.migration.create_table, meta.rails.migration.change_table"
+  },
+  "t.timestamp(tcts)": {
+    "prefix": "timestamp",
+    "body": "t.timestamp :",
+    "description": "Table column timestamp",
+    "scope": "meta.rails.migration.create_table, meta.rails.migration.change_table"
+  },
+  "t.timestamps(tctss)": {
+    "prefix": "timestamps",
+    "body": "t.timestamps\n$0",
+    "description": "Table column timestamps",
+    "scope": "meta.rails.migration.create_table, meta.rails.migration.change_table"
+  },
+  "validates": {
+    "prefix": "validates",
+    "body": "validates :${1:column}, presence: true",
+    "description": "validates :column, presence: true",
+    "scope": "source.ruby"
+  },
+  "params": {
+    "prefix": "params",
+    "body": "params.require(:${1:id_name}).permit(:${2:variable})",
+    "description": "params.require(:id_name).permit(:variable)",
+    "scope": "source.ruby"
+  },
+  "param1": {
+    "prefix": "para1",
+    "body": "params['$1']$0",
+    "description": "parameter with single field"
+  },
+  "param2": {
+    "prefix": "para2",
+    "body": "params['$1']['$2']$0",
+    "description": "two parameters "
+  },
+  "param3": {
+    "prefix": "para3",
+    "body": "params['$1']['$2']['$3']$0",
+    "description": "three parameters"
+  },
+  "require": {
+    "prefix": "req",
+    "body": "require '$1'$0",
+    "description": "require(:id)",
+    "scope": "source.ruby"
+  },
+  "requireAlt": {
+    "prefix": "reqq",
+    "body": "require(:$1)$0",
+    "description": "require(:id)",
+    "scope": "source.ruby"
+  },
+  "include": {
+    "prefix": "include",
+    "body": "include($1)$0",
+    "description": "require(:id)",
+    "scope": "source.ruby"
+  },
+  "permit": {
+    "prefix": "permit",
+    "body": "permit(${1:id})",
+    "description": "permit(:id)",
+    "scope": "source.ruby"
+  },
+  "controller": {
+    "prefix": "controller",
+    "body": [
+      "class ${1:Name}Controller < ApplicationController",
+      "\t$2",
+      "end"
+    ],
+    "description": "class Controller",
+    "scope": "source.ruby"
+  },
+  "index_method": {
+    "prefix": "index",
+    "body": [
+      "def index",
+      "\t$0",
+      "end"
+    ],
+    "description": "method index",
+    "scope": "source.ruby"
+  },
+  "create_method": {
+    "prefix": "create",
+    "body": [
+      "def create",
+      "\t$0",
+      "end"
+    ],
+    "description": "method create",
+    "scope": "source.ruby"
+  },
+  "new_method": {
+    "prefix": "new",
+    "body": [
+      "def new",
+      "\t$0",
+      "end"
+    ],
+    "description": "method new",
+    "scope": "source.ruby"
+  },
+  "edit_method": {
+    "prefix": "edit",
+    "body": [
+      "def edit",
+      "\t$0",
+      "end"
+    ],
+    "description": "method edit",
+    "scope": "source.ruby"
+  },
+  "show": {
+    "prefix": "show",
+    "body": [
+      "def show",
+      "\t$0",
+      "end"
+    ],
+    "description": "method show",
+    "scope": "source.ruby"
+  },
+  "update": {
+    "prefix": "update",
+    "body": [
+      "def update",
+      "\t$0",
+      "end"
+    ],
+    "description": "method update",
+    "scope": "source.ruby"
+  },
+  "destroy": {
+    "prefix": "destroy",
+    "body": [
+      "def destroy",
+      "\t$0",
+      "end"
+    ],
+    "description": "method destroy",
+    "scope": "source.ruby"
+  },
+  "CRUD": {
+    "prefix": "CRUD",
+    "body": [
+      "def index",
+      "\t$0\nend",
+      "\ndef new",
+      "\nend",
+      "\ndef create",
+      "\nend",
+      "\ndef edit",
+      "\nend",
+      "\ndef update",
+      "\nend",
+      "\ndef show",
+      "\nend",
+      "\ndef destroy",
+      "\nend"
+    ],
+    "description": "CRUD method",
+    "scope": "source.ruby"
+  },
+  "before_action": {
+    "prefix": "before_action",
+    "body": "before_action :${1:id}",
+    "description": "before action",
+    "scope": "source.ruby"
+  },
+  "frozenStringLiteral": {
+    "prefix": "frozenstring",
+    "body": "# frozen_string_literal: true$0",
+    "description": "May be deprecated in Ruby 3 but until then..."
+  },
+  "rubyPrettier": {
+    "prefix": "rbprettier",
+    "body": "bundle exec rbprettier --write '**/*.rb'",
+    "description": "gem 'prettier' and then bundle. Then copy and paste this into terminal"
+  },
+  "gitbashssh": {
+    "prefix": "gitbashssh",
+    "body": [
+      "eval $(ssh-agent -s)",
+      "ssh-add ~/.ssh/id_rsa"
+    ],
+    "description": "place into gitbash to save ssh key so you can push without entering your password"
+  }
+}

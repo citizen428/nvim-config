@@ -41,6 +41,7 @@ set autoread
 set cmdheight=2
 set clipboard=unnamedplus
 set colorcolumn=80,100
+set cpt-=t
 set cursorline
 set fillchars+=vert:\ 
 set foldenable foldmethod=syntax foldlevelstart=99 foldcolumn=1

@@ -54,6 +54,7 @@ return require("packer").startup(function()
   -- Developemnt
   use "b3nj5m1n/kommentary"
   use "chrisbra/Colorizer"
+  use "f-person/git-blame.nvim"
   use "mattn/emmet-vim"
   use "rhysd/clever-f.vim"
   use "tjdevries/nlua.nvim"

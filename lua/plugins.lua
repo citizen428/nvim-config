@@ -28,6 +28,7 @@ return require("packer").startup(function()
 
   -- LSP and auto-completion
   use "neovim/nvim-lspconfig"
+  use "nvim-lua/lsp_extensions.nvim"
   use {
     "hrsh7th/nvim-compe",
     requires = {

@@ -65,7 +65,28 @@ lspconfig.sumneko_lua.setup {
 }
 --}}}
 
--- JS / TypeScript
-require'lspconfig'.tsserver.setup{}
+-- {{{ JS / TypeScript
+lspconfig.tsserver.setup{}
+-- }}}
 
+-- {{{ Rust
+lspconfig.rust_analyzer.setup({
+  settings = {
+    ["rust-analyzer"] = {
+      assist = {
+        importMergeBehavior = "last",
+        importPrefix = "by_self",
+      },
+      cargo = {
+        loadOutDirsFromCheck = true
+      },
+      procMacro = {
+        enable = true
+      },
+    }
+  },
+
+  on_attach = on_attach
+})
+-- }}}
 

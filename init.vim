@@ -192,7 +192,14 @@ augroup indentation
 augroup end
 
 augroup terminal
-  au TermOpen * startinsert
+  autocmd!
+  autocmd TermOpen * startinsert
+augroup end
+
+augroup rust
+  autocmd!
+  autocmd Filetype rust setlocal shiftwidth=4 tabstop=4
+  autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require'lsp_extensions'.inlay_hints{}
 augroup end
 " }}}
 
@@ -237,6 +244,7 @@ onoremap p i(
 onoremap in( :<c-u>normal! f(vi(<cr>
 
 " LSP
+nnoremap <silent> ga    <cmd>lua vim.lsp.buf.code_action()<CR>
 nnoremap <silent> gD    <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent> gd    <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>

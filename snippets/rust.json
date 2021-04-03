@@ -1,0 +1,253 @@
+{
+  "extern crate declaration": {
+    "prefix": "ec",
+    "body": ["extern crate $1;"]
+  },
+  "extern crate as declaration": {
+    "prefix": "eca",
+    "body": ["extern crate $1 as $2;"]
+  },
+  "use declaration": {
+    "prefix": "us",
+    "body": ["use $1;"]
+  },
+  "use as declaration": {
+    "prefix": "usa",
+    "body": ["use $1 as $2;"]
+  },
+  "use bracketed declaration": {
+    "prefix": "usb",
+    "body": ["use $1::{$2};"]
+  },
+  "use all in": {
+    "prefix": "us*",
+    "body": ["use $1::*;"]
+  },
+  "module declaration": {
+    "prefix": "mo",
+    "body": ["mod $1;"]
+  },
+  "module bracketed declaration": {
+    "prefix": "mob",
+    "body": ["mod $1 {\n    $0\n}"]
+  },
+  "let statement": {
+    "prefix": "le",
+    "body": ["let $1 = $2;"]
+  },
+  "let mut statement": {
+    "prefix": "lem",
+    "body": ["let mut $1 = $2;"]
+  },
+  "let ref statement": {
+    "prefix": "ler",
+    "body": ["let ref $1 = $2;"]
+  },
+  "let ref mut statement": {
+    "prefix": "lerm",
+    "body": ["let ref mut $1 = $2;"]
+  },
+  "if expression": {
+    "prefix": "if",
+    "body": ["if $1 {", "    $2", "}"]
+  },
+  "if else expression": {
+    "prefix": "ife",
+    "body": ["if $1 {", "    $2", "} else {", "    $3", "}"]
+  },
+  "if let expression": {
+    "prefix": "ifl",
+    "body": ["if let $1 = $2 {", "    $3", "}"]
+  },
+  "else clause": {
+    "prefix": "el",
+    "body": ["else {", "    $1", "}"]
+  },
+  "match expression": {
+    "prefix": "ma",
+    "body": ["match $1 {", "    $2 => $3,", "    $4 => $5,$6", "}"]
+  },
+  "for loop": {
+    "prefix": "fo",
+    "body": ["for $1 in $2 {", "    $3", "}"]
+  },
+  "type definition": {
+    "prefix": "ty",
+    "body": ["type $1 = $2;"]
+  },
+  "generic type definition": {
+    "prefix": "tyg",
+    "body": ["type $1<${2:T}> = $3<$2>$4;"]
+  },
+  "struct definition": {
+    "prefix": "st",
+    "body": ["$1struct $2 {", "    $3", "}"]
+  },
+  "generic struct definition": {
+    "prefix": "stg",
+    "body": ["$1struct $2<${3:T}> $4{", "    $5", "}"]
+  },
+  "struct definition with impl": {
+    "prefix": "sti",
+    "body": ["$1struct $2 {", "    $3", "}\n", "impl $2 {", "    $4", "}"]
+  },
+  "generic struct definition with impl": {
+    "prefix": "stig",
+    "body": [
+      "$1struct $2<${3:T}> $4{",
+      "    $5",
+      "}\n",
+      "impl<$3> $2<$3> $6{",
+      "    $7",
+      "}"
+    ]
+  },
+  "enum definition": {
+    "prefix": "en",
+    "body": ["$1enum $2 {", "    $3", "}"]
+  },
+  "generic enum definition": {
+    "prefix": "eng",
+    "body": ["$1enum $2<${3:T}> $4{", "    $5", "}"]
+  },
+  "enum definition with impl": {
+    "prefix": "eni",
+    "body": ["$1enum $2 {", "    $3", "}\n", "impl $2 {", "    $4", "}"]
+  },
+  "generic enum definition with impl": {
+    "prefix": "enig",
+    "body": [
+      "$1enum $2<${3:T}> $4{",
+      "    $5",
+      "}\n",
+      "impl<$3> $2<$3> $6{",
+      "    $7",
+      "}"
+    ]
+  },
+  "trait definition": {
+    "prefix": "tr",
+    "body": ["$1trait $2 {", "    $3", "}"]
+  },
+  "generic trait definition": {
+    "prefix": "trg",
+    "body": ["$1trait $2<${3:T}> $4{", "    $5", "}"]
+  },
+  "impl type": {
+    "prefix": "im",
+    "body": ["impl $1 {", "    $2", "}"]
+  },
+  "impl trait for type": {
+    "prefix": "imf",
+    "body": ["impl $1 for $2 {", "    $3", "}"]
+  },
+  "impl generic": {
+    "prefix": "img",
+    "body": ["impl<${1:T}> $2 {", "    $3", "}"]
+  },
+  "function definition": {
+    "prefix": "fn",
+    "body": ["$1fn ${2:f}($3) $4{", "    $5", "}"]
+  },
+  "multiline lambda": {
+    "prefix": "|",
+    "body": ["${1:move }|$2| {", "    $3", "}"]
+  },
+  "new constructor definition": {
+    "prefix": "new",
+    "body": ["$1fn new($2) -> $3Self {", "    $4", "}"]
+  },
+  "main function definition": {
+    "prefix": "main",
+    "body": ["fn main() {", "    $1", "}"]
+  },
+  "Option<T>": {
+    "prefix": "opt",
+    "body": ["Option<$1>"]
+  },
+  "Result<T>": {
+    "prefix": "res",
+    "body": ["$1Result<$2>"]
+  },
+  "impl From<...> for ...": {
+    "prefix": "from",
+    "body": [
+      "impl From<$1> for $2 {",
+      "    fn from(${3:val}: $1) -> Self {",
+      "        $4",
+      "    }\n}"
+    ]
+  },
+  "println debug": {
+    "prefix": "pdb",
+    "body": ["println!(\"$1 = {:?}\", $1);"]
+  },
+  "println": {
+    "prefix": "pln",
+    "body": ["println!($1);"]
+  },
+  "assert statement": {
+    "prefix": "ass",
+    "body": ["assert!($1);"]
+  },
+  "assert_eq statement": {
+    "prefix": "asse",
+    "body": ["assert_eq!($1, $2);"]
+  },
+  "vec macro call": {
+    "prefix": "vec",
+    "body": ["vec![$1]"]
+  },
+  "unimplemented macro call with TODO comment": {
+    "prefix": "un",
+    "body": ["unimplemented!() // TODO"]
+  },
+  "unreachable macro call": {
+    "prefix": "unr",
+    "body": ["unreachable!($1)"]
+  },
+  "macro rules": {
+    "prefix": "mr",
+    "body": ["macro_rules! $1 {", "    ($2) => {", "        $3", "    };\n}"]
+  },
+  "test function": {
+    "prefix": "test",
+    "body": ["#[test]", "fn test_$1() {", "    $2", "}"]
+  },
+  "test module": {
+    "prefix": "testm",
+    "body": [
+      "#[cfg(test)]",
+      "mod test_${1:super} {",
+      "    ${2:use super::*;}\n",
+      "    #[test]",
+      "    fn test_$3() {",
+      "        $4",
+      "    }\n}"
+    ]
+  },
+  "attribute": {
+    "prefix": "#",
+    "body": ["#[${1:name}($2)]"]
+  },
+  "cfg attribute": {
+    "prefix": "cfg",
+    "body": ["#[cfg($1)]"]
+  },
+  "cfg feature attribute": {
+    "prefix": "cff",
+    "body": ["#[cfg(feature = \"$1\")]"]
+  },
+  "derive attribute": {
+    "prefix": "drv",
+    "body": ["#[derive($1)]"]
+  },
+  "derive a few useful attributes": {
+    "prefix": "drv*",
+    "body": ["#[derive(Copy, Clone, Debug, Default, PartialEq, Eq$1)]"]
+  },
+  "TODO comment": {
+    "prefix": "todo",
+    "body": ["// TODO: ${1:...}"]
+  }
+}

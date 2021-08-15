@@ -239,6 +239,9 @@ inoremap jk <Esc>
 
 cabbrev Wq wq
 
+" reselect pasted text
+nnoremap gP `[v`]
+
 " Operator pending mappings
 onoremap p i(
 onoremap in( :<c-u>normal! f(vi(<cr>

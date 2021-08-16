@@ -13,7 +13,7 @@ if (has("termguicolors"))
 endif
 
 colorscheme lucius
-LuciusDarkHighContrast
+LuciusDark
 
 highlight Pmenu guibg=white guifg=black gui=bold
 highlight Comment gui=bold
@@ -22,10 +22,10 @@ highlight NonText guibg=none
 
 function! ToggleBackground()
   if (&background == 'light')
-    LuciusDarkHighContrast
+    LuciusDark
     echo "background -> dark"
   else
-    LuciusLightHighContrast
+    LuciusLight
     echo "background -> light"
   endif
 endfunction

@@ -23,7 +23,7 @@ return require("packer").startup(function()
   use "shaunsingh/nord.nvim"
   use "YorickPeterse/vim-paper"
   use {
-    "glepnir/galaxyline.nvim",
+    "nvim-lualine/lualine.nvim",
     requires = {{"kyazdani42/nvim-web-devicons"}}
   }
 

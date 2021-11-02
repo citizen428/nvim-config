@@ -70,6 +70,7 @@ let g:python3_host_prog = '~/.asdf/shims/python3'
 " }}}
 
 " Plugin settings {{{
+lua require'nvim-tree'.setup {}
 
 " nvim-compe
 let g:compe = {}

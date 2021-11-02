@@ -1,9 +1,11 @@
 " vim:foldmethod=marker:foldlevel=0
 
 " {{{ Load Lua config files
-lua require('plugins')
-lua require('statusline')
-lua require('lsp')
+lua << EOF
+require('plugins')
+require('statusline')
+require('lsp')
+EOF
 " }}}
 
 " Aesthetics {{{

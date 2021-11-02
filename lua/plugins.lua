@@ -20,7 +20,8 @@ return require("packer").startup(function()
   use "tpope/vim-sensible"
 
   -- Aesthetics
-  use "jonathanfilip/vim-lucius"
+  use "shaunsingh/nord.nvim"
+  use "YorickPeterse/vim-paper"
   use {
     "glepnir/galaxyline.nvim",
     requires = {{"kyazdani42/nvim-web-devicons"}}

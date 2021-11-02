@@ -82,6 +82,7 @@ return require("packer").startup(function()
   use "mbbill/undotree"
   use "mhinz/vim-grepper"
   use "tpope/vim-surround"
+  use "tversteeg/registers.nvim"
   use "junegunn/vim-easy-align"
   use "Yggdroot/indentLine"
 end)

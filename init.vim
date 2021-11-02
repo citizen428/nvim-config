@@ -10,16 +10,12 @@ EOF
 
 " Aesthetics {{{
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
 if (has("termguicolors"))
   set termguicolors
 endif
 
 colorscheme nord
-
-highlight Pmenu guibg=white guifg=black gui=bold
-highlight Comment gui=bold
-highlight Normal gui=none
-highlight NonText guibg=none
 
 function! ToggleBackground()
   if (&background == 'light')
@@ -30,11 +26,9 @@ function! ToggleBackground()
     echo "background -> light"
   endif
 endfunction
-
 " }}}
 
 " Settings {{{
-
 let mapleader = ","
 let maplocalleader = " "
 
@@ -263,5 +257,4 @@ nnoremap <silent> gn    <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 
 nnoremap <silent> <leader>D <cmd>lua vim.lsp.buf.type_definition()<CR>
 nmap <silent> <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
-
 " }}}

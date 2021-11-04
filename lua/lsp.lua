@@ -6,24 +6,23 @@ local lspconfig = require("lspconfig")
 local home = vim.fn.expand("$HOME")
 
 local on_attach = function(client, bufnr)
-  print("Attaching LSP: "..client.name)
-  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+  print("Attaching LSP: " .. client.name)
+  local function buf_set_option(...)
+    vim.api.nvim_buf_set_option(bufnr, ...)
+  end
 
   buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
 end
+
 -- }}}
 
 -- Solargraph {{{
-lspconfig.solargraph.setup{
-  settings = {
-    solargraph = {
-      diagnostics = true,
-      completion = true
-    }
-  },
+lspconfig.solargraph.setup {
+  settings = {solargraph = {diagnostics = true, completion = true}},
 
   on_attach = on_attach
 }
+
 --}}}
 
 -- Lua {{{
@@ -38,11 +37,11 @@ else
   print("Unsupported system for sumneko")
 end
 
-local sumneko_root_path = home.."/src/lua-language-server"
-local sumneko_binary = sumneko_root_path.."/bin/"..system_name.."/lua-language-server"
+local sumneko_root_path = home .. "/src/lua-language-server"
+local sumneko_binary = sumneko_root_path .. "/bin/" .. system_name .. "/lua-language-server"
 
 lspconfig.sumneko_lua.setup {
-  cmd = {sumneko_binary, "-E", sumneko_root_path.."/main.lua"};
+  cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
   settings = {
     Lua = {
       runtime = {
@@ -63,10 +62,12 @@ lspconfig.sumneko_lua.setup {
     },
   },
 }
+
 --}}}
 
 -- {{{ JS / TypeScript
-lspconfig.tsserver.setup{}
+lspconfig.tsserver.setup {}
+
 -- }}}
 
 -- {{{ Rust
@@ -77,16 +78,13 @@ lspconfig.rust_analyzer.setup({
         importMergeBehavior = "last",
         importPrefix = "by_self",
       },
-      cargo = {
-        loadOutDirsFromCheck = true
-      },
-      procMacro = {
-        enable = true
-      },
+      cargo = {loadOutDirsFromCheck = true},
+      procMacro = {enable = true},
     }
   },
 
   on_attach = on_attach
 })
+
 -- }}}
 

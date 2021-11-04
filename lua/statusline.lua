@@ -1,3 +1,1 @@
-require('lualine').setup {
-  extensions = { 'fugitive', 'nvim-tree', 'quickfix' }
-}
+require('lualine').setup {extensions = {'fugitive', 'nvim-tree', 'quickfix'}}

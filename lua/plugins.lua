@@ -2,11 +2,11 @@
 local nvim_command = vim.api.nvim_command
 local fn = vim.fn
 
-local install_path = fn.stdpath("data").."/site/pack/packer/opt/packer.nvim"
+local install_path = fn.stdpath("data") .. "/site/pack/packer/opt/packer.nvim"
 local repo = "https://github.com/wbthomason/packer.nvim"
 
 if fn.empty(fn.glob(install_path)) > 0 then
-  nvim_command("!git clone "..repo.." "..install_path)
+  nvim_command("!git clone " .. repo .. " " .. install_path)
   nvim_command("packadd packer.nvim")
 end
 
@@ -22,6 +22,7 @@ return require("packer").startup(function()
   -- Aesthetics
   use "shaunsingh/nord.nvim"
   use "YorickPeterse/vim-paper"
+
   use {
     "nvim-lualine/lualine.nvim",
     requires = {{"kyazdani42/nvim-web-devicons"}}
@@ -42,7 +43,9 @@ return require("packer").startup(function()
   use {
     "kyazdani42/nvim-tree.lua",
     requires = "kyazdani42/nvim-web-devicons",
-    config = function() require'nvim-tree'.setup {} end
+    config = function()
+      require 'nvim-tree'.setup {}
+    end
   }
 
   -- Fuzzy finding
@@ -60,11 +63,11 @@ return require("packer").startup(function()
   use "f-person/git-blame.nvim"
   use "mattn/emmet-vim"
   use "rhysd/clever-f.vim"
-  use "tjdevries/nlua.nvim"
   use "tpope/vim-fugitive"
   use "tpope/vim-rails"
   use "vim-test/vim-test"
 
+  use "tjdevries/nlua.nvim"
   use "yuezk/vim-js"
   use 'maxmellon/vim-jsx-pretty'
 
@@ -75,7 +78,7 @@ return require("packer").startup(function()
     cmd = {"Dispatch", "Make", "Focus", "Start"}
   }
 
-  use { "junegunn/rainbow_parentheses.vim", opt = true }
+  use {"junegunn/rainbow_parentheses.vim", opt = true}
 
   use "907th/vim-auto-save"
   use "jiangmiao/auto-pairs"

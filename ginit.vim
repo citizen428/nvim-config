@@ -1,6 +1,6 @@
 set guifont=Fira\ Code:h14
 set mouse=a
-LuciusLightHighContrast
+colorscheme paper
 
 if exists('g:fvim_loaded')
   " Title bar themed with colorscheme

@@ -6,7 +6,7 @@ Some used plugins:
 
 * [packer.nvim](https://github.com/wbthomason/packer.nvim): plugin management
 * [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua): file explorer
-* [galaxyline.nvim](https://github.com/glepnir/galaxyline.nvim): status line
+* [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim): status line
 * [NVim LSP](https://neovim.io/doc/user/lsp.html), [nvim-compe](https://github.com/hrsh7th/nvim-compe), [vim-vsnip](https://github.com/hrsh7th/vim-vsnip): LSP support and autocompletion
 * [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter): better syntax highlighting
 * [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim): fuzzy finding

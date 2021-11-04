@@ -1,10 +1,13 @@
 " vim:foldmethod=marker:foldlevel=0
 
-" {{{ Load Lua config files
+" {{{ Lua config
 lua << EOF
 require('plugins')
 require('statusline')
 require('lsp')
+
+require('nvim-tree').setup {}
+require('telescope').load_extension('fzf')
 EOF
 " }}}
 
@@ -66,7 +69,6 @@ let g:python3_host_prog = '~/.asdf/shims/python3'
 " }}}
 
 " Plugin settings {{{
-lua require'nvim-tree'.setup {}
 
 " nvim-compe
 let g:compe = {}
@@ -117,14 +119,6 @@ nmap ga <Plug>(EasyAlign
 " indentLine
 let g:indentLine_char = '▏'
 let g:indentLine_setColors = 1
-
-" vim-grepper
-let g:grepper = {}
-let g:grepper.tools = ['rg', 'grep', 'git']
-let g:grepper.rg = { 'grepprg': 'rg -SH --no-heading --vimgrep' }
-
-nnoremap <leader>g :Grepper<CR>
-nnoremap <Leader>G :Grepper -cword -noprompt<CR>
 
 " vim-test
 let test#strategy = "dispatch"
@@ -209,6 +203,8 @@ nnoremap <silent> \ :NvimTreeToggle<CR>
 nnoremap <silent> <leader>of :NvimTreeFindFile<CR>
 
 nmap <silent> <C-p> :Telescope find_files<CR>
+nnoremap <leader>g :Telescope live_grep theme=dropdown previewer=false<CR>
+nnoremap <Leader>G :Telescope grep_string theme=dropdown previewer=false<CR>
 nnoremap <silent> <leader>b :Telescope buffers show_all_buffers=true<CR>
 nnoremap <silent> <leader>h :Telescope help_tags<CR>
 

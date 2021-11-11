@@ -44,7 +44,7 @@ return require("packer").startup(function()
     "kyazdani42/nvim-tree.lua",
     requires = "kyazdani42/nvim-web-devicons",
     config = function()
-      require 'nvim-tree'.setup {}
+      require("nvim-tree").setup {}
     end
   }
 
@@ -54,7 +54,7 @@ return require("packer").startup(function()
     requires = {
       {"nvim-lua/popup.nvim"},
       {"nvim-lua/plenary.nvim"},
-      {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}
+      {"nvim-telescope/telescope-fzf-native.nvim", run = "make"}
     }
   }
 
@@ -73,7 +73,7 @@ return require("packer").startup(function()
 
   use "tjdevries/nlua.nvim"
   use "yuezk/vim-js"
-  use 'maxmellon/vim-jsx-pretty'
+  use "maxmellon/vim-jsx-pretty"
 
   -- Useful utilities
   use {

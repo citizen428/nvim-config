@@ -61,10 +61,18 @@ return require("packer").startup(function()
   -- Better syntax highlighting
   use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
 
-  -- Developemnt
+  -- Development
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+  }
   use "b3nj5m1n/kommentary"
+  use "blankname/vim-fish"
   use "chrisbra/Colorizer"
   use "f-person/git-blame.nvim"
+  use "LnL7/vim-nix"
   use "mattn/emmet-vim"
   use "rhysd/clever-f.vim"
   use "tpope/vim-fugitive"

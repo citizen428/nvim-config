@@ -182,6 +182,12 @@ augroup rust
   autocmd Filetype rust setlocal shiftwidth=4 tabstop=4
   autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require'lsp_extensions'.inlay_hints{}
 augroup end
+
+augroup fish
+  autocmd!
+  autocmd Filetype fish compiler fish
+  autocmd Filetype fish setlocal foldmethod=expr
+augroup end
 " }}}
 
 " Mappings {{{

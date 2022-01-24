@@ -204,6 +204,7 @@ nnoremap <leader>g :Telescope live_grep theme=dropdown previewer=false<CR>
 nnoremap <Leader>G :Telescope grep_string theme=dropdown previewer=false<CR>
 nnoremap <silent> <leader>b :Telescope buffers show_all_buffers=true<CR>
 nnoremap <silent> <leader>h :Telescope help_tags<CR>
+nnoremap <silent> <leader>d :Telescope diagnostics<CR>
 
 nnoremap <silent> <leader>U :UndotreeToggle<CR>
 nnoremap <silent> <leader>ff :call TrimWhitespace()<CR> <Bar> gg=G<C-O>
@@ -245,9 +246,6 @@ nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> gs    <cmd>lua vim.lsp.buf.document_symbol()<CR>
 nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
-nnoremap <silent> gp    <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
-nnoremap <silent> gn    <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 
 nnoremap <silent> <leader>D <cmd>lua vim.lsp.buf.type_definition()<CR>
-nmap <silent> <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
 " }}}

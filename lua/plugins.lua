@@ -63,10 +63,14 @@ return require("packer").startup(function()
 
   -- Development
   use {
-    'numToStr/Comment.nvim',
+    "numToStr/Comment.nvim",
     config = function()
-      require('Comment').setup()
+      require("Comment").setup()
     end
+  }
+  use {
+    "SmiteshP/nvim-gps",
+    requires = "nvim-treesitter/nvim-treesitter"
   }
   use "b3nj5m1n/kommentary"
   use "blankname/vim-fish"

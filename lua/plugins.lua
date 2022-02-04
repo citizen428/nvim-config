@@ -98,6 +98,16 @@ return require("packer").startup(function()
       }
     end
   }
+  use {
+    "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+    config = function()
+      require("trouble").setup {
+        mode = "document_diagnostics",
+        auto_close = true
+      }
+    end
+  }
   use "blankname/vim-fish"
   use "LnL7/vim-nix"
   use "mattn/emmet-vim"

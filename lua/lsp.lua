@@ -3,8 +3,6 @@
 -- Imports and local helpers {{{
 local lspconfig = require("lspconfig")
 
-local home = vim.fn.expand("$HOME")
-
 local on_attach = function(client, bufnr)
   print("Attaching LSP: " .. client.name)
   local function buf_set_option(...)

@@ -6,8 +6,6 @@ require('plugins')
 require('statusline')
 require('lsp')
 
-require('nvim-gps').setup()
-require('nvim-tree').setup {}
 require('nvim-treesitter.configs').setup {
   ensure_installed = 'maintained',
   ignore_install = { 'norg' }

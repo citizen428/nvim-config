@@ -72,9 +72,16 @@ return require("packer").startup(function()
     "SmiteshP/nvim-gps",
     requires = "nvim-treesitter/nvim-treesitter"
   }
-  use "b3nj5m1n/kommentary"
+  use {
+    "norcalli/nvim-colorizer.lua",
+    config = function()
+      require("colorizer").setup {
+        "*";
+        css = { css_fn = true; }; -- Enable all CSS features: rgb_fn, hsl_fn, etc.
+      }
+    end
+  }
   use "blankname/vim-fish"
-  use "chrisbra/Colorizer"
   use "f-person/git-blame.nvim"
   use "LnL7/vim-nix"
   use "mattn/emmet-vim"

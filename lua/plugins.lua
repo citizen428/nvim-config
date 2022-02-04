@@ -81,8 +81,21 @@ return require("packer").startup(function()
       }
     end
   }
+  use {
+    "lewis6991/gitsigns.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim"
+    },
+    config = function()
+      require("gitsigns").setup {
+        current_line_blame = true,
+        current_line_blame_opts = {
+          delay = 500
+        }
+      }
+    end
+  }
   use "blankname/vim-fish"
-  use "f-person/git-blame.nvim"
   use "LnL7/vim-nix"
   use "mattn/emmet-vim"
   use "rhysd/clever-f.vim"

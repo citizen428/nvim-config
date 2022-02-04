@@ -34,6 +34,8 @@ function! ToggleBackground()
     echo "background -> light"
   endif
 endfunction
+
+highlight link GitSignsCurrentLineBlame Comment
 " }}}
 
 " Settings {{{

@@ -23,3 +23,4 @@ Editing Lua with [NeovimTree](https://github.com/kyazdani42/nvim-tree.lua) open 
 * [Neovim LSP, DAP and Fuzzy Finder](https://medium.com/swlh/neovim-lsp-dap-and-fuzzy-finder-60337ef08060)
 * [Neovim — init.lua](https://alpha2phi.medium.com/neovim-init-lua-e80f4f136030)
 * [richin13's init.vim](https://github.com/richin13/dotfiles/blob/develop/dotfiles/.config/nvim/init.vim)
+* [LunarVim's Neovim-from-scratch](https://github.com/LunarVim/Neovim-from-scratch/)

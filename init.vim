@@ -3,14 +3,11 @@
 " {{{ Lua config
 lua << EOF
 require('plugins')
-require('statusline')
 require('lsp')
+require('treesitter')
+require('statusline')
 require('autocommands')
 
-require('nvim-treesitter.configs').setup {
-  ensure_installed = 'maintained',
-  ignore_install = { 'norg' }
-}
 require('telescope').load_extension('fzf')
 EOF
 " }}}

@@ -76,15 +76,6 @@ return require("packer").startup(function()
     end
   }
   use {
-    "norcalli/nvim-colorizer.lua",
-    config = function()
-      require("colorizer").setup {
-        "*";
-        css = { css_fn = true; }; -- Enable all CSS features: rgb_fn, hsl_fn, etc.
-      }
-    end
-  }
-  use {
     "lewis6991/gitsigns.nvim",
     requires = {
       "nvim-lua/plenary.nvim"
@@ -111,6 +102,7 @@ return require("packer").startup(function()
   use "blankname/vim-fish"
   use "LnL7/vim-nix"
   use "mattn/emmet-vim"
+  use "norcalli/nvim-colorizer.lua"
   use "rhysd/clever-f.vim"
   use "tpope/vim-fugitive"
   use "tpope/vim-rails"

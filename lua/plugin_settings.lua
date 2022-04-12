@@ -150,3 +150,8 @@ vim.cmd [[
   nnoremap <leader>xl <cmd>TroubleToggle loclist<cr>
   nnoremap gR <cmd>TroubleToggle lsp_references<cr>
 ]]
+
+require('colorizer').setup({
+  '*'; -- Highlight all files, but customize some others.
+  css = { hsl_fn = true; }; -- Enable parsing rgb(...) functions in css.
+})

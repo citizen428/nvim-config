@@ -31,11 +31,24 @@ return require("packer").startup(function()
   use "neovim/nvim-lspconfig"
   use "nvim-lua/lsp_extensions.nvim"
   use {
-    "hrsh7th/nvim-compe",
+    "hrsh7th/nvim-cmp",
+    config = function()
+      require("config.cmp").setup()
+    end,
     requires = {
-      {"hrsh7th/vim-vsnip"},
-      {"hrsh7th/vim-vsnip-integ"},
-    }
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-buffer",
+      "ray-x/cmp-treesitter",
+      {
+        "dcampos/nvim-snippy",
+        wants = "vim-snippets",
+      },
+      {
+        "dcampos/cmp-snippy",
+        wants = "nvim-cmp"
+      },
+      "honza/vim-snippets",
+    },
   }
 
   -- File explorer

@@ -20,8 +20,7 @@ return require("packer").startup(function()
   use "tpope/vim-sensible"
 
   -- Aesthetics
-  use "shaunsingh/nord.nvim"
-  use "YorickPeterse/vim-paper"
+  use "robertmeta/nofrils"
 
   use {
     "nvim-lualine/lualine.nvim",
@@ -84,7 +83,7 @@ return require("packer").startup(function()
       require("gitsigns").setup {
         current_line_blame = true,
         current_line_blame_opts = {
-          delay = 500
+          delay = 200
         }
       }
     end
@@ -108,6 +107,7 @@ return require("packer").startup(function()
   use "tpope/vim-rails"
   use "vim-test/vim-test"
 
+  use "fatih/vim-go"
   use "tjdevries/nlua.nvim"
   use "yuezk/vim-js"
   use "maxmellon/vim-jsx-pretty"

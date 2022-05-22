@@ -5,15 +5,13 @@ vim.cmd [[
     set termguicolors
   endif
 
-  colorscheme nord
+  colorscheme nofrils-acme
 
   function! ToggleBackground()
-    if (&background == 'light')
-      colorscheme nord
-      echo "background -> dark"
+    if (g:colors_name == "nofrils-acme")
+      colorscheme nofrils-dark
     else
-      colorscheme paper
-      echo "background -> light"
+      colorscheme nofrils-acme
     endif
   endfunction
 

@@ -1,3 +1,7 @@
+require("config.telescope").setup()
+require("config.treesitter").setup()
+require("config.lualine").setup()
+
 vim.cmd [[
   set completeopt=menuone,noselect
   set shortmess+=c

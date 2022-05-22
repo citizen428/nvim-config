@@ -14,7 +14,7 @@ vim.cmd [[packadd packer.nvim]]
 
 return require("packer").startup(function()
   -- Packer can manage itself as an optional plugin
-  use {"wbthomason/packer.nvim", opt = true}
+  use { "wbthomason/packer.nvim", opt = true }
 
   -- Sensible defaults
   use "tpope/vim-sensible"
@@ -24,7 +24,7 @@ return require("packer").startup(function()
 
   use {
     "nvim-lualine/lualine.nvim",
-    requires = {{"kyazdani42/nvim-web-devicons"}}
+    requires = { { "kyazdani42/nvim-web-devicons" } },
   }
 
   -- LSP and auto-completion
@@ -64,14 +64,14 @@ return require("packer").startup(function()
   use {
     "nvim-telescope/telescope.nvim",
     requires = {
-      {"nvim-lua/popup.nvim"},
-      {"nvim-lua/plenary.nvim"},
-      {"nvim-telescope/telescope-fzf-native.nvim", run = "make"}
+      { "nvim-lua/popup.nvim" },
+      { "nvim-lua/plenary.nvim" },
+      { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
     }
   }
 
   -- Better syntax highlighting
-  use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
+  use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
 
   -- Development
   use {
@@ -129,10 +129,10 @@ return require("packer").startup(function()
   use {
     "tpope/vim-dispatch",
     opt = true,
-    cmd = {"Dispatch", "Make", "Focus", "Start"}
+    cmd = { "Dispatch", "Make", "Focus", "Start" }
   }
 
-  use {"junegunn/rainbow_parentheses.vim", opt = true}
+  use { "junegunn/rainbow_parentheses.vim", opt = true }
 
   use "907th/vim-auto-save"
   use "jiangmiao/auto-pairs"

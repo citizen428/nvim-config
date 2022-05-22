@@ -96,6 +96,7 @@ return require("packer").startup(function()
       require("gitsigns").setup {
         current_line_blame = true,
         current_line_blame_opts = {
+          virt_text_pos = 'eol',
           delay = 200
         }
       }
@@ -112,18 +113,17 @@ return require("packer").startup(function()
     end
   }
   use "blankname/vim-fish"
-  use "LnL7/vim-nix"
   use "mattn/emmet-vim"
   use "norcalli/nvim-colorizer.lua"
   use "rhysd/clever-f.vim"
   use "tpope/vim-fugitive"
-  use "tpope/vim-rails"
   use "vim-test/vim-test"
 
   use "fatih/vim-go"
   use "tjdevries/nlua.nvim"
   use "yuezk/vim-js"
   use "maxmellon/vim-jsx-pretty"
+  use "tpope/vim-rails"
 
   -- Useful utilities
   use {
@@ -132,8 +132,6 @@ return require("packer").startup(function()
     cmd = { "Dispatch", "Make", "Focus", "Start" }
   }
 
-  use { "junegunn/rainbow_parentheses.vim", opt = true }
-
   use "907th/vim-auto-save"
   use "jiangmiao/auto-pairs"
   use "kassio/neoterm"
@@ -141,5 +139,4 @@ return require("packer").startup(function()
   use "tpope/vim-surround"
   use "tversteeg/registers.nvim"
   use "junegunn/vim-easy-align"
-  use "Yggdroot/indentLine"
 end)

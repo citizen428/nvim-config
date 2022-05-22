@@ -10,6 +10,7 @@ local on_attach = function(client, bufnr)
   end
 
   buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
+  vim.api.nvim_command("au BufWritePost <buffer> lua vim.lsp.buf.formatting()")
 end
 
 -- }}}
@@ -54,7 +55,7 @@ lspconfig.tsserver.setup {}
 -- }}}
 
 -- {{{ Rust
-lspconfig.rust_analyzer.setup({
+lspconfig.rust_analyzer.setup {
   settings = {
     ["rust-analyzer"] = {
       assist = {
@@ -67,7 +68,21 @@ lspconfig.rust_analyzer.setup({
   },
 
   on_attach = on_attach
-})
+}
 
 -- }}}
 
+-- {{{ Go
+lspconfig.gopls.setup {
+  settings = {
+    gopls = {
+      analyses = {
+        unusedparams = true,
+      },
+      staticcheck = true,
+    },
+  },
+
+  on_attach = on_attach,
+}
+-- }}}

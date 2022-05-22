@@ -33,4 +33,8 @@ vim.cmd [[
     autocmd Filetype fish compiler fish
     autocmd Filetype fish setlocal foldmethod=expr
   augroup end
+
+  augroup go
+    autocmd!
+    autocmd Filetype go setlocal makeprg=go\ build tabstop=4
 ]]

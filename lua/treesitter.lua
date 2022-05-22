@@ -4,6 +4,6 @@ if not status_ok then
 end
 
 configs.setup {
-  ensure_installed = 'maintained',
-  ignore_install = { 'norg' }
+  ensure_installed = 'all',
+  ignore_install = { 'norg', 'phpdoc' }
 }

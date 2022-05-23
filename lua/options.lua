@@ -39,20 +39,16 @@ for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
-if vim.fn.has('nvim-0.8') == 1 then
-  vim.opt["winbar"] = "%f"
+if vim.fn.has("nvim-0.8") == 1 then
+  vim.go.winbar = "%f"
 end
 
-vim.g.neoterm_default_mod = 'botright'
+vim.g.mapleader = ","
+vim.g.maplocalleader = " "
+vim.opt.cpt = vim.opt.cpt - { "t" }
 
-vim.cmd [[
-  let mapleader = ","
-  let maplocalleader = " "
+vim.go.undodir = vim.env.HOME.."/.local/share/nvim/undo"
+vim.g.ruby_host_prog = "~/.asdf/shims/neovim-ruby-host"
+vim.g.python3_host_prog = "~/.asdf/shims/python3"
 
-  set cpt-=t
-  set fillchars+=vert:\
-
-  let &undodir = $HOME . "/.local/share/nvim/undo"
-  let g:ruby_host_prog = '~/.asdf/shims/neovim-ruby-host'
-  let g:python3_host_prog = '~/.asdf/shims/python3'
-]]
+vim.g.neoterm_default_mod = "botright"

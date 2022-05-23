@@ -1,10 +1,10 @@
+vim.env.NVIM_TUI_ENABLE_TRUE_COLOR = 1
+
+if vim.fn.has("termguicolors") then
+  vim.o.termguicolors = true
+end
+
 vim.cmd [[
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-
-  if (has("termguicolors"))
-    set termguicolors
-  endif
-
   colorscheme nofrils-acme
   let g:nofrils_strbackgrounds=1
   call NofrilsNormal()

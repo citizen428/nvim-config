@@ -37,4 +37,10 @@ vim.cmd [[
   augroup go
     autocmd!
     autocmd Filetype go setlocal makeprg=go\ build tabstop=4
+  augroup end
+
+  augroup lua
+    autocmd!
+    autocmd BufWritePre *.lua :lua vim.lsp.buf.format()
+  augroup end
 ]]

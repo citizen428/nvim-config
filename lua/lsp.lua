@@ -10,7 +10,6 @@ local on_attach = function(client, bufnr)
   end
 
   buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
-  vim.api.nvim_command("au BufWritePost <buffer> lua vim.lsp.buf.formatting()")
 end
 
 -- }}}

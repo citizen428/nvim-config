@@ -8,7 +8,7 @@ Some used plugins:
 * [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua): file explorer
 * [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim): status line
 * [NVim LSP](https://neovim.io/doc/user/lsp.html), [nvim-cmp](https://github.com/hrsh7th/nvim-cmp),
-    [vim-vsnip](https://github.com/hrsh7th/vim-vsnip): LSP support and autocompletion
+    [nvim-snippy](https://github.com/dcampos/nvim-snippy): LSP support and autocompletion
 * [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter): better syntax highlighting
 * [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim): fuzzy finding
 

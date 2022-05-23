@@ -43,6 +43,8 @@ if vim.fn.has('nvim-0.8') == 1 then
   vim.opt["winbar"] = "%f"
 end
 
+vim.g.neoterm_default_mod = 'botright'
+
 vim.cmd [[
   let mapleader = ","
   let maplocalleader = " "

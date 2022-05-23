@@ -18,4 +18,5 @@ vim.cmd [[
   endfunction
 
   highlight link GitSignsCurrentLineBlame Comment
+  highlight Vertsplit guibg=bg guifg=bg
 ]]

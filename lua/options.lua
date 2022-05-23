@@ -33,11 +33,14 @@ local options = {
   wildignorecase = true,
   wildmode       = "longest,list,full",
   wildmenu       = true,
-  winbar         = "%f"
 }
 
 for k, v in pairs(options) do
   vim.opt[k] = v
+end
+
+if vim.fn.has('nvim-0.8') == 1 then
+  vim.opt["winbar"] = "%f"
 end
 
 vim.cmd [[

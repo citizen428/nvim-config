@@ -6,6 +6,8 @@ vim.cmd [[
   endif
 
   colorscheme nofrils-acme
+  let g:nofrils_strbackgrounds=1
+  call NofrilsNormal()
 
   function! ToggleBackground()
     if (g:colors_name == "nofrils-acme")

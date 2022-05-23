@@ -96,7 +96,7 @@ return require("packer").startup(function()
       require("gitsigns").setup {
         current_line_blame = true,
         current_line_blame_opts = {
-          virt_text_pos = 'eol',
+          virt_text_pos = 'right_align',
           delay = 200
         }
       }

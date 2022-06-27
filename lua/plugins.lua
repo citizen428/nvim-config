@@ -132,8 +132,15 @@ return require("packer").startup(function()
     cmd = { "Dispatch", "Make", "Focus", "Start" }
   }
 
+  use {
+    "windwp/nvim-autopairs",
+    config = function()
+      require("nvim-autopairs").setup {}
+    end
+  }
+
+  use "windwp/nvim-autopairs"
   use "907th/vim-auto-save"
-  use "jiangmiao/auto-pairs"
   use "kassio/neoterm"
   use "mbbill/undotree"
   use "tpope/vim-surround"

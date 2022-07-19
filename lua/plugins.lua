@@ -146,4 +146,5 @@ return require("packer").startup(function()
   use "tpope/vim-surround"
   use "tversteeg/registers.nvim"
   use "junegunn/vim-easy-align"
+  use "wsdjeg/vim-fetch"
 end)

@@ -81,11 +81,8 @@ return require("packer").startup(function()
     end
   }
   use {
-    "SmiteshP/nvim-gps",
+    "SmiteshP/nvim-navic",
     requires = "nvim-treesitter/nvim-treesitter",
-    config = function()
-      require('nvim-gps').setup()
-    end
   }
   use {
     "lewis6991/gitsigns.nvim",

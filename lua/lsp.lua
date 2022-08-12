@@ -2,9 +2,11 @@
 
 -- Imports and local helpers {{{
 local lspconfig = require("lspconfig")
+local navic = require("nvim-navic")
 
 local on_attach = function(client, bufnr)
   print("Attaching LSP: " .. client.name)
+  navic.attach(client, bufnr)
   local function buf_set_option(...)
     vim.api.nvim_buf_set_option(bufnr, ...)
   end
@@ -16,7 +18,7 @@ end
 
 -- Solargraph {{{
 lspconfig.solargraph.setup {
-  settings = {solargraph = {diagnostics = true, completion = true}},
+  settings = { solargraph = { diagnostics = true, completion = true } },
 
   on_attach = on_attach
 }
@@ -33,7 +35,7 @@ lspconfig.sumneko_lua.setup {
       },
       diagnostics = {
         -- Get the language server to recognize the `vim` global
-        globals = {"vim", "use"},
+        globals = { "vim", "use" },
       },
       workspace = {
         -- Make the server aware of Neovim runtime files
@@ -49,7 +51,8 @@ lspconfig.sumneko_lua.setup {
 --}}}
 
 -- {{{ JS / TypeScript
-lspconfig.tsserver.setup {}
+lspconfig.tsserver.setup { on_attach = on_attach }
+lspconfig.denols.setup { on_attach = on_attach }
 
 -- }}}
 
@@ -61,8 +64,8 @@ lspconfig.rust_analyzer.setup {
         importMergeBehavior = "last",
         importPrefix = "by_self",
       },
-      cargo = {loadOutDirsFromCheck = true},
-      procMacro = {enable = true},
+      cargo = { loadOutDirsFromCheck = true },
+      procMacro = { enable = true },
     }
   },
 

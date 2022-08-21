@@ -136,7 +136,6 @@ return require("packer").startup(function()
     end
   }
 
-  use "windwp/nvim-autopairs"
   use "907th/vim-auto-save"
   use "kassio/neoterm"
   use "mbbill/undotree"

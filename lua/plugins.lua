@@ -21,6 +21,7 @@ return require("packer").startup(function()
 
   -- Aesthetics
   use "robertmeta/nofrils"
+  use "arcticicestudio/nord-vim"
 
   use {
     "nvim-lualine/lualine.nvim",

@@ -11,7 +11,7 @@ vim.cmd [[
 
   function! ToggleBackground()
     if (g:colors_name == "nofrils-acme")
-      colorscheme nofrils-dark
+      colorscheme nord
     else
       colorscheme nofrils-acme
     endif

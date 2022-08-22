@@ -11,10 +11,10 @@ vim.cmd [[
 
   augroup indentation
     autocmd!
-    autocmd Filetype * setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=8
-    autocmd Filetype python setlocal shiftwidth=4 softtabstop=4 tabstop=8
+    autocmd Filetype * setlocal noexpandtab shiftwidth=4 tabstop=4
+    autocmd Filetype python setlocal expandtab softtabstop=4
+    autocmd Filetype ruby setlocal expandtab shiftwidth=2 softtabstop=2
     autocmd Filetype yaml setlocal indentkeys-=<:>
-    autocmd Filetype make setlocal noexpandtab softtabstop=0
   augroup end
 
   augroup terminal
@@ -24,7 +24,6 @@ vim.cmd [[
 
   augroup rust
     autocmd!
-    autocmd Filetype rust setlocal shiftwidth=4 tabstop=4
     autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require'lsp_extensions'.inlay_hints{}
   augroup end
 
@@ -41,6 +40,7 @@ vim.cmd [[
 
   augroup lua
     autocmd!
+    autocmd Filetype lua setlocal expandtab shiftwidth=2 softtabstop=2
     autocmd BufWritePre *.lua :lua vim.lsp.buf.format()
   augroup end
 ]]

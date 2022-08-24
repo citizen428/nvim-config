@@ -1,4 +1,3 @@
-require("config.telescope").setup()
 require("config.treesitter").setup()
 require("config.lualine").setup()
 
@@ -103,19 +102,7 @@ vim.cmd [[
   onoremap p i(
   onoremap in( :<c-u>normal! f(vi(<cr>
 
-  " LSP
-  nnoremap <silent> ga    <cmd>lua vim.lsp.buf.code_action()<CR>
-  nnoremap <silent> gD    <cmd>lua vim.lsp.buf.declaration()<CR>
-  nnoremap <silent> gd    <cmd>lua vim.lsp.buf.definition()<CR>
-  nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
-  nnoremap <silent> gi    <cmd>lua vim.lsp.buf.implementation()<CR>
-  nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
-  nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
-  nnoremap <silent> gs    <cmd>lua vim.lsp.buf.document_symbol()<CR>
-  nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
-
-  nnoremap <silent> <leader>D <cmd>lua vim.lsp.buf.type_definition()<CR>
-
+  " trouble.nvim
   nnoremap <leader>xx <cmd>TroubleToggle<cr>
   nnoremap <leader>xw <cmd>TroubleToggle workspace_diagnostics<cr>
   nnoremap <leader>xd <cmd>TroubleToggle document_diagnostics<cr>

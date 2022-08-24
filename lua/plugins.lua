@@ -110,6 +110,10 @@ return require("packer").startup(function()
       }
     end
   }
+  use {
+    'kosayoda/nvim-lightbulb',
+    requires = 'antoinemadec/FixCursorHold.nvim',
+  }
   use "blankname/vim-fish"
   use "mattn/emmet-vim"
   use "norcalli/nvim-colorizer.lua"

@@ -1,5 +1,6 @@
 require("config.treesitter").setup()
 require("config.lualine").setup()
+require('nvim-lightbulb').setup({ autocmd = { enabled = true } })
 
 vim.cmd [[
   set completeopt=menuone,noselect

@@ -29,6 +29,7 @@ vim.cmd [[
 
   augroup fish
     autocmd!
+    autocmd Filetype fish setlocal expandtab shiftwidth=2 softtabstop=2
     autocmd Filetype fish compiler fish
     autocmd Filetype fish setlocal foldmethod=expr
   augroup end

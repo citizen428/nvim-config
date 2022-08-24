@@ -1,7 +1,6 @@
 local options = {
   autoread       = true,
   clipboard      = "unnamedplus",
-  cmdheight      = 2,
   colorcolumn    = "100",
   cursorline     = true,
   foldenable     = true,
@@ -47,7 +46,7 @@ vim.g.mapleader = ","
 vim.g.maplocalleader = " "
 vim.opt.cpt = vim.opt.cpt - { "t" }
 
-vim.go.undodir = vim.env.HOME.."/.local/share/nvim/undo"
+vim.go.undodir = vim.env.HOME .. "/.local/share/nvim/undo"
 vim.g.ruby_host_prog = "~/.asdf/shims/neovim-ruby-host"
 vim.g.python3_host_prog = "~/.asdf/shims/python3"
 

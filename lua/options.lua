@@ -1,6 +1,7 @@
 local options = {
   autoread       = true,
   clipboard      = "unnamedplus",
+  cmdheight      = 1,
   colorcolumn    = "100",
   cursorline     = true,
   foldenable     = true,

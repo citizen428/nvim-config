@@ -15,6 +15,7 @@ vim.cmd [[
     autocmd Filetype python setlocal expandtab softtabstop=4
     autocmd Filetype ruby setlocal expandtab shiftwidth=2 softtabstop=2
     autocmd Filetype yaml setlocal indentkeys-=<:>
+    autocmd Filetype zsh setlocal expandtab shiftwidth=4 softtabstop=4
   augroup end
 
   augroup terminal

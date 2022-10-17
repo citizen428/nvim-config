@@ -39,10 +39,6 @@ for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
-if vim.fn.has("nvim-0.8") == 1 then
-  vim.go.winbar = "%f"
-end
-
 vim.g.mapleader = ","
 vim.g.maplocalleader = " "
 vim.opt.cpt = vim.opt.cpt - { "t" }

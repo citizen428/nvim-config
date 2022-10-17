@@ -36,7 +36,7 @@ function M.setup()
       }
     },
     extensions = { "fugitive", "nvim-tree", "quickfix" },
-    options = { theme = acme }
+    options = { theme = "nord" }
   })
 end
 

@@ -112,3 +112,10 @@ lspconfig.gopls.setup {
 -- Lua {{{
 lspconfig.clangd.setup { on_attach = on_attach }
 -- }}}
+
+-- Elixir {{{
+lspconfig.elixirls.setup {
+  cmd = { "/opt/homebrew/bin/elixir-ls" },
+  on_attach = on_attach
+}
+-- }}}

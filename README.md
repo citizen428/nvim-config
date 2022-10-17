@@ -22,7 +22,6 @@ Editing Lua with [NeovimTree](https://github.com/kyazdani42/nvim-tree.lua) open 
 
 * Wherever possible I try to use Lua plugins.
 * I also try to keep as much of the configuration as possible in Lua, but there are still a lot of `vim.cmd` blocks around.
-* I'm not really a fan of syntax highlighting, so I use the [Nofrils](https://github.com/robertmeta/nofrils) theme.
 
 ## Inspiration
 

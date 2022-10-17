@@ -5,15 +5,15 @@ if vim.fn.has("termguicolors") then
 end
 
 vim.cmd [[
-  colorscheme nofrils-acme
-  let g:nofrils_strbackgrounds=1
-  call NofrilsNormal()
+  colorscheme nord
 
   function! ToggleBackground()
-    if (g:colors_name == "nofrils-acme")
-      colorscheme nord
-    else
+    if (g:colors_name == "nord")
       colorscheme nofrils-acme
+      let g:nofrils_strbackgrounds=1
+      call NofrilsNormal()
+    else
+      colorscheme nord
     endif
   endfunction
 

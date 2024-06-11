@@ -12,6 +12,10 @@ Some used plugins:
 * [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter): better syntax highlighting
 * [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim): fuzzy finding
 
+## Important Note
+
+I no longer use this config as my daily driver, it's not updated and may not work with newer version of Neovim (which I still use).
+
 ## Screenshots
 
 Editing Lua with [NeovimTree](https://github.com/kyazdani42/nvim-tree.lua) open and a document symbols view provided by the language server.
